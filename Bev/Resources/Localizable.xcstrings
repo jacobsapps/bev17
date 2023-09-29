@@ -1,0 +1,103 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "Feature.Beer.DetailView.ABV %lf" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%.2f%% abv"
+          }
+        }
+      }
+    },
+    "Feature.Beer.DetailView.DrinkWith" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Drink this with"
+          }
+        }
+      }
+    },
+    "Feature.Beer.DetailView.FirstBrewed %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "First brewed %@"
+          }
+        }
+      }
+    },
+    "Feature.Beer.DetailView.Hops" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hops"
+          }
+        }
+      }
+    },
+    "Feature.Beer.DetailView.Malt" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Malt"
+          }
+        }
+      }
+    },
+    "Feature.Beer.DetailView.Yeast" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yeast"
+          }
+        }
+      }
+    },
+    "Feature.Beer.ListView.Error" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Error"
+          }
+        }
+      }
+    },
+    "Feature.Beer.ListView.OK" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "OK"
+          }
+        }
+      }
+    },
+    "Feature.Beer.ListView.Title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bev"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}
