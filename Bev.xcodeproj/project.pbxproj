@@ -17,6 +17,7 @@
 		169B738229DA021400B1DE66 /* BeerViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169B738129DA021400B1DE66 /* BeerViewModelTests.swift */; };
 		169C6FA029D8627300474092 /* BevApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169C6F9F29D8627300474092 /* BevApp.swift */; };
 		169C6FA429D8627500474092 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 169C6FA329D8627500474092 /* Assets.xcassets */; };
+		16E5127A2ACA0A8A00DE76B1 /* ObservationTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E512792ACA0A8A00DE76B1 /* ObservationTracking.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,7 +44,9 @@
 		169C6FAC29D8627500474092 /* BevTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BevTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		169C6FC929D8636300474092 /* Repository */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Repository; sourceTree = "<group>"; };
 		169C6FCA29D8637400474092 /* Networking */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Networking; sourceTree = "<group>"; };
+		16C26CDA2AC8E5CD0098734E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		16D8763A2ABF4CD000D4BB5C /* Database */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Database; sourceTree = "<group>"; };
+		16E512792ACA0A8A00DE76B1 /* ObservationTracking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservationTracking.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +146,7 @@
 		169C6F9E29D8627300474092 /* Bev */ = {
 			isa = PBXGroup;
 			children = (
+				16C26CDA2AC8E5CD0098734E /* Info.plist */,
 				169C6F9F29D8627300474092 /* BevApp.swift */,
 				164FD0742AC2053C005E5E86 /* Feature */,
 				164FD0732AC20528005E5E86 /* Resources */,
@@ -153,9 +157,18 @@
 		169C6FAF29D8627500474092 /* BevTests */ = {
 			isa = PBXGroup;
 			children = (
+				16E512782ACA0A7C00DE76B1 /* Utils */,
 				167879E229D9A1890064C8AE /* Beer */,
 			);
 			path = BevTests;
+			sourceTree = "<group>";
+		};
+		16E512782ACA0A7C00DE76B1 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				16E512792ACA0A8A00DE76B1 /* ObservationTracking.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -278,6 +291,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				169B738229DA021400B1DE66 /* BeerViewModelTests.swift in Sources */,
+				16E5127A2ACA0A8A00DE76B1 /* ObservationTracking.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -413,10 +427,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 9H7GAWSLA8;
+				DEVELOPMENT_TEAM = 37RFJDQBDP;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = NO;
+				INFOPLIST_FILE = Bev/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -426,7 +440,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.jacob.Bev;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jacob.Bev17;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -444,10 +458,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 9H7GAWSLA8;
+				DEVELOPMENT_TEAM = 37RFJDQBDP;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = NO;
+				INFOPLIST_FILE = Bev/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -457,7 +471,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.jacob.Bev;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jacob.Bev17;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;

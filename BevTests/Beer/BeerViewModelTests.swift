@@ -10,7 +10,7 @@ import Domain
 import RepositoryMocks
 import Networking
 import XCTest
-import SwiftUI
+import Observation
 @testable import Bev
 
 final class BeerViewModelTests: XCTestCase {
@@ -39,7 +39,7 @@ final class BeerViewModelTests: XCTestCase {
         super.tearDown()
     }
     
-//     MARK: - Combine -
+    //     MARK: - Combine -
     
     func test_initialState_withCombine() {
         sut = BeerViewModel(repository: mockBeerRepository, strategy: .combine)
@@ -54,7 +54,7 @@ final class BeerViewModelTests: XCTestCase {
         await sut.loadBeers()
         XCTAssertEqual(mockBeerRepository.loadBeersCallCount, 1)
     }
- 
+    
     func test_refreshBeers_tellsRepositoryToLoad_withCombine() {
         sut = BeerViewModel(repository: mockBeerRepository, strategy: .combine)
         mockBeerRepository.stubLoadBeersResponse = .success([])
@@ -64,7 +64,7 @@ final class BeerViewModelTests: XCTestCase {
         waitForExpectations(timeout: 1)
         XCTAssertEqual(mockBeerRepository.loadBeersCallCount, 1)
     }
- 
+    
     func test_listenerSentBeersSuccessfully_setsBeers_withCombine() {
         sut = BeerViewModel(repository: mockBeerRepository, strategy: .combine)
         let sampleBeers = [Beer.sample()]
@@ -159,32 +159,5 @@ final class BeerViewModelTests: XCTestCase {
         waitForChanges(to: \.showAlert, on: sut)
         XCTAssertEqual(sut.errorMessage, testError.localizedDescription)
         XCTAssertTrue(sut.showAlert)
-    }
-    
-    // MARK: - Helpers -
-    
-    /// waitForChanges uses the Observation framework's global `withObservationTracking` function to wait for changes to a property.
-    ///
-    /// The generic type `T` represents a view model and the generic type `U` represents a propert on this view model.
-    ///
-    private func waitForChanges<T, U>(to keyPath: KeyPath<T, U>, on parent: T, timeout: Double = 1.0) {
-        let exp = expectation(description: #function)
-        withObservationTracking {
-            _ = parent[keyPath: keyPath]
-        } onChange: {
-            exp.fulfill()
-        }
-        waitForExpectations(timeout: timeout)
-    }
-    
-    private func awaitChanges<T, U>(to keyPath: KeyPath<T, U>, on parent: T, timeout: Double = 1.0) async {
-        let exp = expectation(description: #function)
-        withObservationTracking {
-            _ = parent[keyPath: keyPath]
-
-        } onChange: {
-            exp.fulfill()
-        }
-        await fulfillment(of: [exp], timeout: timeout)
     }
 }

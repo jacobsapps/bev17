@@ -18,7 +18,7 @@ struct BeerListCell: View {
     var body: some View {
         beerContainer
             .frame(height: 144)
-            .background(Color(UIColor.systemBackground))
+            .background(Color(colorScheme == .dark ? UIColor.darkGray : UIColor.systemBackground))
             .cornerRadius(16)
             .shadow(color: colorScheme == .dark ? .clear
                                                 : .primary.opacity(0.16),
