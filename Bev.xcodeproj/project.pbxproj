@@ -17,7 +17,7 @@
 		169B738229DA021400B1DE66 /* BeerViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169B738129DA021400B1DE66 /* BeerViewModelTests.swift */; };
 		169C6FA029D8627300474092 /* BevApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169C6F9F29D8627300474092 /* BevApp.swift */; };
 		169C6FA429D8627500474092 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 169C6FA329D8627500474092 /* Assets.xcassets */; };
-		16E5127A2ACA0A8A00DE76B1 /* ObservationTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E512792ACA0A8A00DE76B1 /* ObservationTracking.swift */; };
+		16CA22B02ACF611300D68143 /* ObservationTestUtils in Frameworks */ = {isa = PBXBuildFile; productRef = 16CA22AF2ACF611300D68143 /* ObservationTestUtils */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,7 +46,6 @@
 		169C6FCA29D8637400474092 /* Networking */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Networking; sourceTree = "<group>"; };
 		16C26CDA2AC8E5CD0098734E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		16D8763A2ABF4CD000D4BB5C /* Database */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Database; sourceTree = "<group>"; };
-		16E512792ACA0A8A00DE76B1 /* ObservationTracking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservationTracking.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +62,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1690EA6D29DAB5A60025BD8C /* RepositoryMocks in Frameworks */,
+				16CA22B02ACF611300D68143 /* ObservationTestUtils in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -157,18 +157,9 @@
 		169C6FAF29D8627500474092 /* BevTests */ = {
 			isa = PBXGroup;
 			children = (
-				16E512782ACA0A7C00DE76B1 /* Utils */,
 				167879E229D9A1890064C8AE /* Beer */,
 			);
 			path = BevTests;
-			sourceTree = "<group>";
-		};
-		16E512782ACA0A7C00DE76B1 /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-				16E512792ACA0A8A00DE76B1 /* ObservationTracking.swift */,
-			);
-			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -210,6 +201,7 @@
 			name = BevTests;
 			packageProductDependencies = (
 				1690EA6C29DAB5A60025BD8C /* RepositoryMocks */,
+				16CA22AF2ACF611300D68143 /* ObservationTestUtils */,
 			);
 			productName = BevTests;
 			productReference = 169C6FAC29D8627500474092 /* BevTests.xctest */;
@@ -244,6 +236,9 @@
 				Base,
 			);
 			mainGroup = 169C6F9329D8627300474092;
+			packageReferences = (
+				16CA22AE2ACF611300D68143 /* XCRemoteSwiftPackageReference "ObservationTestUtils" */,
+			);
 			productRefGroup = 169C6F9D29D8627300474092 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -291,7 +286,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				169B738229DA021400B1DE66 /* BeerViewModelTests.swift in Sources */,
-				16E5127A2ACA0A8A00DE76B1 /* ObservationTracking.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -565,6 +559,17 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCRemoteSwiftPackageReference section */
+		16CA22AE2ACF611300D68143 /* XCRemoteSwiftPackageReference "ObservationTestUtils" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jacobsapps/ObservationTestUtils";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
 /* Begin XCSwiftPackageProductDependency section */
 		167879EB29D9A3E70064C8AE /* Repository */ = {
 			isa = XCSwiftPackageProductDependency;
@@ -573,6 +578,11 @@
 		1690EA6C29DAB5A60025BD8C /* RepositoryMocks */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = RepositoryMocks;
+		};
+		16CA22AF2ACF611300D68143 /* ObservationTestUtils */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 16CA22AE2ACF611300D68143 /* XCRemoteSwiftPackageReference "ObservationTestUtils" */;
+			productName = ObservationTestUtils;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

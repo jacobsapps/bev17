@@ -7,10 +7,10 @@
 
 import Combine
 import Domain
-import RepositoryMocks
 import Networking
+import ObservationTestUtils
+import RepositoryMocks
 import XCTest
-import Observation
 @testable import Bev
 
 final class BeerViewModelTests: XCTestCase {
