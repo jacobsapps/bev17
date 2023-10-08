@@ -39,7 +39,7 @@ final class BeerViewModelTests: XCTestCase {
         super.tearDown()
     }
     
-    //     MARK: - Combine -
+    // MARK: - Combine -
     
     func test_initialState_withCombine() {
         sut = BeerViewModel(repository: mockBeerRepository, strategy: .combine)

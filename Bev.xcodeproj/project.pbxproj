@@ -76,6 +76,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		1627CDF52AD3459E00ACCF9A /* Feature */ = {
+			isa = PBXGroup;
+			children = (
+				167879E229D9A1890064C8AE /* Beer */,
+			);
+			path = Feature;
+			sourceTree = "<group>";
+		};
 		164FD0732AC20528005E5E86 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -157,7 +165,7 @@
 		169C6FAF29D8627500474092 /* BevTests */ = {
 			isa = PBXGroup;
 			children = (
-				167879E229D9A1890064C8AE /* Beer */,
+				1627CDF52AD3459E00ACCF9A /* Feature */,
 			);
 			path = BevTests;
 			sourceTree = "<group>";
