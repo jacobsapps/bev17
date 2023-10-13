@@ -25,7 +25,6 @@ struct BeerListCell: View {
                                                 : .primary.opacity(0.16),
                     radius: 22 / UIScreen.main.scale,
                     x: 0, y: 2)
-            .padding(.bottom, 16)
     }
     
     private var beerContainer: some View {

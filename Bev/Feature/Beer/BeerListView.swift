@@ -15,8 +15,12 @@ struct BeerListView: View {
     @State private var searchText: String = ""
     
     private var beerSearchResults: [Beer] {
-        if searchText.isEmpty {
+        if viewModel.beers.isEmpty {
+            return beerSkeleton
+            
+        } else if searchText.isEmpty {
             return viewModel.beers
+            
         } else {
             return viewModel.beers.filter {
                 $0.name.contains(searchText)
@@ -33,7 +37,6 @@ struct BeerListView: View {
                 .toolbar(.automatic, for: .navigationBar)
                 .toolbar { ToolbarItem(placement: .navigationBarTrailing) { refreshButton } }
         }
-        .searchable(text: $searchText)
         .alert(isPresented: $viewModel.showAlert) { errorAlert }
         .refreshable { viewModel.refreshBeers() }
         .task { await viewModel.loadBeers() }
@@ -41,28 +44,28 @@ struct BeerListView: View {
     
     @ViewBuilder
     private var beerListView: some View {
-        ScrollView {
-            VStack(spacing: .zero) {
-                if viewModel.beers.isEmpty {
-                    beersSkeletonView
-                    
-                } else {
-                    beersScrollView
-                }
+        List(beerSearchResults) { beer in
+            NavigationLink(value: beer) {
+                BeerListCell(beer: beer)
             }
-            .padding(.horizontal, 16)
+            .navigationDestination(for: Beer.self) {
+                BeerDetailView(beer: $0)
+            }
         }
+        .if(viewModel.beers.isEmpty) {
+            $0.redacted(reason: .placeholder)
+        }
+        .searchable(text: $searchText)
+        .animation(.bouncy, value: beerSearchResults)
     }
     
-    private var beersSkeletonView: some View {
-        ForEach([Beer.sample(id: 9999991, name: "Sample 1"),
+    private var beerSkeleton: [Beer] {
+        [Beer.sample(id: 9999991, name: "Sample 1"),
                  Beer.sample(id: 9999992, name: "Tankard 2"),
                  Beer.sample(id: 9999993, name: "Bev 3"),
                  Beer.sample(id: 9999994, name: "Gigantic Beer 4"),
                  Beer.sample(id: 9999995, name: "Ale 5"),
-                 Beer.sample(id: 9999996, name: "Lager 6")]) { beer in
-            BeerListCell(beer: beer)
-        }.redacted(reason: .placeholder)
+                 Beer.sample(id: 9999996, name: "Lager 6")]
     }
     
     private var beersScrollView: some View {

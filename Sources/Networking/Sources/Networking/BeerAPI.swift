@@ -9,7 +9,8 @@ import Domain
 import Foundation
 
 public protocol BeerAPI {
-    func getBeers() async throws -> [Beer]
+    func getAllBeers() async throws -> [Beer]
+    func getBeers(page: Int) async throws -> [Beer]
 }
 
 public enum BeerAPIError: LocalizedError {
@@ -48,11 +49,27 @@ public final class BeerAPIImpl: BeerAPI {
         self.session = session
     }
     
-    public func getBeers() async throws -> [Beer] {
+    public func getAllBeers() async throws -> [Beer] {
+        var currentPage: Int = 1
+        var lastPageIsEmpty: Bool?
+        var allBeers = [Beer]()
+        while lastPageIsEmpty != .some(true) {
+            let beers = try await getBeers(page: currentPage)
+            allBeers.append(contentsOf: beers)
+            currentPage += 1
+            lastPageIsEmpty = beers.isEmpty
+            print(beers)
+            print(currentPage)
+            print(allBeers.count)
+        }
+        return allBeers
+    }
+    
+    public func getBeers(page: Int) async throws -> [Beer] {
         
         let queryItems = [
-            URLQueryItem(name: "page", value: "1"),
-            URLQueryItem(name: "per_page", value: "500")
+            URLQueryItem(name: "page", value: "\(page)"),
+            URLQueryItem(name: "per_page", value: "50")
         ]
         
         guard let url = URL(string: baseURL, encodingInvalidCharacters: false)?
