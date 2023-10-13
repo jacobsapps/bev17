@@ -52,7 +52,7 @@ public final class BeerAPIImpl: BeerAPI {
         
         let queryItems = [
             URLQueryItem(name: "page", value: "1"),
-            URLQueryItem(name: "per_page", value: "80")
+            URLQueryItem(name: "per_page", value: "500")
         ]
         
         guard let url = URL(string: baseURL, encodingInvalidCharacters: false)?

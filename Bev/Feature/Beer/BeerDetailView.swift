@@ -5,6 +5,7 @@
 //  Created by Jacob Bartlett on 06/07/2023.
 //
 
+import CachedAsyncImage
 import Domain
 import SwiftUI
 
@@ -27,7 +28,7 @@ struct BeerDetailView: View {
     }
     
     private var image: some View {
-        AsyncImage(
+        CachedAsyncImage(
             url: URL(string: beer.imageURL ?? ""),
             content: { image in
                 image

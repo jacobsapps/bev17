@@ -5,6 +5,7 @@
 //  Created by Jacob Bartlett on 01/04/2023.
 //
 
+import CachedAsyncImage
 import Domain
 import Repository
 import SwiftUI
@@ -17,7 +18,7 @@ struct BeerListCell: View {
     
     var body: some View {
         beerContainer
-            .frame(height: 144)
+            .frame(height: 164)
             .background(Color(colorScheme == .dark ? UIColor.darkGray : UIColor.systemBackground))
             .cornerRadius(16)
             .shadow(color: colorScheme == .dark ? .clear
@@ -28,7 +29,7 @@ struct BeerListCell: View {
     }
     
     private var beerContainer: some View {
-        HStack(spacing: 16) {
+        HStack(spacing: .zero) {
             beerImage
             beerDetails
         }
@@ -38,7 +39,7 @@ struct BeerListCell: View {
     private var beerImage: some View {
         if let urlString = beer.imageURL,
            let url = URL(string: urlString) {
-            AsyncImage(
+            CachedAsyncImage(
                 url: url,
                 content: { image in
                     image
@@ -61,12 +62,14 @@ struct BeerListCell: View {
                 .fontWeight(.medium)
                 .foregroundColor(.primary.opacity(0.98))
                 .multilineTextAlignment(.leading)
+                .fixedSize(horizontal: false, vertical: true)
             
             Text(beer.tagline)
                 .font(.body)
                 .foregroundColor(.secondary)
                 .multilineTextAlignment(.leading)
                 .padding(.bottom, 4)
+                .fixedSize(horizontal: false, vertical: true)
             
             Text(beer.details)
                 .font(.footnote)
@@ -75,8 +78,7 @@ struct BeerListCell: View {
                 .lineSpacing(2)
                 .truncationMode(.tail)
         }
-        .padding(.vertical, 8)
-        .padding(.trailing, 8)
-        .frame(maxWidth: .infinity, alignment: .leading)
+        .padding(8)
+        .frame(maxWidth: .infinity, alignment: .topLeading)
     }
 }

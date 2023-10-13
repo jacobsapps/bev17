@@ -12,6 +12,18 @@ struct BeerListView: View {
 
     @State private var viewModel = BeerViewModel()
     @State private var beer: Beer?
+    @State private var searchText: String = ""
+    
+    private var beerSearchResults: [Beer] {
+        if searchText.isEmpty {
+            return viewModel.beers
+        } else {
+            return viewModel.beers.filter {
+                $0.name.contains(searchText)
+                || $0.tagline.contains(searchText)
+            }
+        }
+    }
     
     var body: some View {
         NavigationStack {
@@ -21,6 +33,7 @@ struct BeerListView: View {
                 .toolbar(.automatic, for: .navigationBar)
                 .toolbar { ToolbarItem(placement: .navigationBarTrailing) { refreshButton } }
         }
+        .searchable(text: $searchText)
         .alert(isPresented: $viewModel.showAlert) { errorAlert }
         .refreshable { viewModel.refreshBeers() }
         .task { await viewModel.loadBeers() }
@@ -42,22 +55,23 @@ struct BeerListView: View {
     }
     
     private var beersSkeletonView: some View {
-        ForEach([Beer.sample(id: 1, name: "Sample 1"),
-                 Beer.sample(id: 2, name: "Tankard 2"),
-                 Beer.sample(id: 3, name: "Bev 3"),
-                 Beer.sample(id: 4, name: "Gigantic Beer 4"),
-                 Beer.sample(id: 5, name: "Ale 5"),
-                 Beer.sample(id: 6, name: "Lager 6")]) { beer in
+        ForEach([Beer.sample(id: 9999991, name: "Sample 1"),
+                 Beer.sample(id: 9999992, name: "Tankard 2"),
+                 Beer.sample(id: 9999993, name: "Bev 3"),
+                 Beer.sample(id: 9999994, name: "Gigantic Beer 4"),
+                 Beer.sample(id: 9999995, name: "Ale 5"),
+                 Beer.sample(id: 9999996, name: "Lager 6")]) { beer in
             BeerListCell(beer: beer)
         }.redacted(reason: .placeholder)
     }
     
     private var beersScrollView: some View {
-        ForEach(viewModel.beers) { beer in
-            NavigationLink(value: beer, label: {
+        ForEach(beerSearchResults) { beer in
+            NavigationLink(value: beer) {
                 BeerListCell(beer: beer)
-            })
+            }
         }
+        .animation(.bouncy, value: beerSearchResults)
         .navigationDestination(for: Beer.self, destination: {
             BeerDetailView(beer: $0)
         })
