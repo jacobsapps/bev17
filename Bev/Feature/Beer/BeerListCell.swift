@@ -23,8 +23,8 @@ struct BeerListCell: View {
             .cornerRadius(16)
             .shadow(color: colorScheme == .dark ? .clear
                                                 : .primary.opacity(0.16),
-                    radius: 22 / UIScreen.main.scale,
-                    x: 0, y: 2)
+                    radius: 16 / UIScreen.main.scale,
+                    x: 1, y: 1)
     }
     
     private var beerContainer: some View {
