@@ -13,6 +13,13 @@ public protocol BeerAPI {
     func getBeers(page: Int) async throws -> [Beer]
 }
 
+public extension BeerAPI {
+    
+    func getBeers() async throws -> [Beer] {
+        try await getBeers(page: 1)
+    }
+}
+
 public enum BeerAPIError: LocalizedError {
     
     case couldNotConstructURL

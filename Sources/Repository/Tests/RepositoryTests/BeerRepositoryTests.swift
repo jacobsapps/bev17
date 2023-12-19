@@ -40,21 +40,21 @@ final class BeerRepositoryTests: XCTestCase {
     }
     
     // MARK: - DataAccessStrategy.fastestAvailable
-    
 
     // MARK: - DataAccessStrategy.upToDateWithFallback
     
-    func test_loadBeers_callsAPI() async {
-        mockBeerAPI.stubBeersResponse = .success([])
+    func test_loadBeers_upToDateWithFallback_callsAPI() async {
+        mockBeerAPI.stubGetAllBeersResponse = .success([])
         mockBeerDB.stubSaveBeersResponse = .success(())
         await sut.loadBeers(strategy: .upToDateWithFallback)
-        XCTAssertEqual(mockBeerAPI.getBeersCallCount, 1)
+        XCTAssertEqual(mockBeerAPI.getAllBeersCallCount, 1)
+        XCTAssertEqual(mockBeerDB.saveBeersCallCount, 1)
     }
     
     func test_loadBeers_success_sendsBeersToPublisher() async {
 
         let expectedBeers = [Beer.sample()]
-        mockBeerAPI.stubBeersResponse = .success(expectedBeers)
+        mockBeerAPI.stubGetAllBeersResponse = .success(expectedBeers)
         mockBeerDB.stubSaveBeersResponse = .success(())
 
         if case .success(let beers) = await getLoadBeersTestResult(strategy: .upToDateWithFallback) {
@@ -68,7 +68,7 @@ final class BeerRepositoryTests: XCTestCase {
     func test_loadBeers_failure_sendsErrorToPublisher() async {
 
         let testError = TestRepositoryError.testError
-        mockBeerAPI.stubBeersResponse = .failure(testError)
+        mockBeerAPI.stubGetAllBeersResponse = .failure(testError)
         mockBeerDB.stubGetBeersResponse = .failure(testError)
 
         if case .failure(let error) = await getLoadBeersTestResult(strategy: .upToDateWithFallback) {
@@ -80,7 +80,6 @@ final class BeerRepositoryTests: XCTestCase {
     }
     
     // MARK: - DataAccessStrategy.returnMultipleTimes
-    
     
     // MARK: - Helpers -
     

@@ -49,7 +49,6 @@ struct BeerListView: View {
                 NavigationLink(value: beer) {
                     EmptyView()
                 }
-                .opacity(0)
                 .navigationDestination(for: Beer.self) {
                     BeerDetailView(beer: $0)
                 }

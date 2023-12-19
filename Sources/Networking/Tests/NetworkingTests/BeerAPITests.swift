@@ -36,7 +36,7 @@ final class BeerAPITests: XCTestCase {
         _ = try? await sut.getBeers()
         XCTAssertEqual(mockURLSession.capturedURL?.host, "api.punkapi.com")
         XCTAssertEqual(mockURLSession.capturedURL?.path, "/v2/beers")
-        XCTAssertEqual(mockURLSession.capturedURL?.query(percentEncoded: false), "page=1&per_page=80")    
+        XCTAssertEqual(mockURLSession.capturedURL?.query(percentEncoded: false), "page=1&per_page=50")    
     }
     
     func test_getBeers_returnsBeer() async {

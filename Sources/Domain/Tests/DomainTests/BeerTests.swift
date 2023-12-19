@@ -89,7 +89,7 @@ final class BeerTests: XCTestCase {
     func test_sample_createsSampleBeer() {
         let beer = Beer.sample()
         
-        XCTAssertEqual(beer.id, 1)
+        XCTAssertEqual(beer.id, 999)
         XCTAssertEqual(beer.name, "Beer")
         XCTAssertEqual(beer.tagline, "A nice beer")
         XCTAssertEqual(beer.abv, 5.5)

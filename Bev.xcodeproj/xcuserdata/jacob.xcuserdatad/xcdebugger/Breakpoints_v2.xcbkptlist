@@ -3,4 +3,321 @@
    uuid = "F111016E-DAB4-4E9D-A872-4A20F25AB3D2"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "07FEF831-E914-4984-A817-869D423FF727"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Sources/Repository/Sources/Repository/BeerRepository.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
+            landmarkName = "loadBeers(strategy:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "07FEF831-E914-4984-A817-869D423FF727 - ecc5edf087facf69"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(5) suspend resume partial function for Repository.BeerRepositoryImpl.loadBeers(strategy: Repository.DataAccessStrategy) async -&gt; ()"
+                  moduleName = "Repository"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jacob/Repos/bev/Sources/Repository/Sources/Repository/BeerRepository.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "54"
+                  endingLineNumber = "54"
+                  offsetFromSymbolStart = "208">
+               </Location>
+               <Location
+                  uuid = "07FEF831-E914-4984-A817-869D423FF727 - 13698cdc01338178"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(6) suspend resume partial function for Repository.BeerRepositoryImpl.loadBeers(strategy: Repository.DataAccessStrategy) async -&gt; ()"
+                  moduleName = "Repository"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jacob/Repos/bev/Sources/Repository/Sources/Repository/BeerRepository.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "54"
+                  endingLineNumber = "54"
+                  offsetFromSymbolStart = "208">
+               </Location>
+               <Location
+                  uuid = "07FEF831-E914-4984-A817-869D423FF727 - b9fd2b8f83694347"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(7) suspend resume partial function for Repository.BeerRepositoryImpl.loadBeers(strategy: Repository.DataAccessStrategy) async -&gt; ()"
+                  moduleName = "Repository"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jacob/Repos/bev/Sources/Repository/Sources/Repository/BeerRepository.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "54"
+                  endingLineNumber = "54"
+                  offsetFromSymbolStart = "208">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C9FF5C8C-931F-4B5D-9113-4D0315FA6A9A"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Sources/Repository/Sources/Repository/BeerRepository.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "loadBeers(strategy:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "C9FF5C8C-931F-4B5D-9113-4D0315FA6A9A - 437760828ea1b6d7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for Repository.BeerRepositoryImpl.loadBeers(strategy: Repository.DataAccessStrategy) async -&gt; ()"
+                  moduleName = "Repository"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jacob/Repos/bev/Sources/Repository/Sources/Repository/BeerRepository.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "48"
+                  endingLineNumber = "48"
+                  offsetFromSymbolStart = "420">
+               </Location>
+               <Location
+                  uuid = "C9FF5C8C-931F-4B5D-9113-4D0315FA6A9A - d1eec6cfafe610f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) await resume partial function for Repository.BeerRepositoryImpl.loadBeers(strategy: Repository.DataAccessStrategy) async -&gt; ()"
+                  moduleName = "Repository"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jacob/Repos/bev/Sources/Repository/Sources/Repository/BeerRepository.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "48"
+                  endingLineNumber = "48"
+                  offsetFromSymbolStart = "36">
+               </Location>
+               <Location
+                  uuid = "C9FF5C8C-931F-4B5D-9113-4D0315FA6A9A - 13698cdc01338002"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(6) suspend resume partial function for Repository.BeerRepositoryImpl.loadBeers(strategy: Repository.DataAccessStrategy) async -&gt; ()"
+                  moduleName = "Repository"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jacob/Repos/bev/Sources/Repository/Sources/Repository/BeerRepository.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "48"
+                  endingLineNumber = "48"
+                  offsetFromSymbolStart = "84">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "642C7B2C-2CA1-41BF-A640-580245EC4B74"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Sources/Repository/Sources/Repository/BeerRepository.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
+            landmarkName = "upToDateWithFallback()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "642C7B2C-2CA1-41BF-A640-580245EC4B74 - 8aa356ef581a8fcc"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for Repository.BeerRepositoryImpl.upToDateWithFallback() async throws -&gt; ()"
+                  moduleName = "Repository"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jacob/Repos/bev/Sources/Repository/Sources/Repository/BeerRepository.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "78"
+                  endingLineNumber = "78"
+                  offsetFromSymbolStart = "404">
+               </Location>
+               <Location
+                  uuid = "642C7B2C-2CA1-41BF-A640-580245EC4B74 - 60d88fa01032cbca"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(5) suspend resume partial function for Repository.BeerRepositoryImpl.upToDateWithFallback() async throws -&gt; ()"
+                  moduleName = "Repository"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jacob/Repos/bev/Sources/Repository/Sources/Repository/BeerRepository.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "78"
+                  endingLineNumber = "78"
+                  offsetFromSymbolStart = "164">
+               </Location>
+               <Location
+                  uuid = "642C7B2C-2CA1-41BF-A640-580245EC4B74 - 9d935252806253b6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(9) suspend resume partial function for Repository.BeerRepositoryImpl.upToDateWithFallback() async throws -&gt; ()"
+                  moduleName = "Repository"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jacob/Repos/bev/Sources/Repository/Sources/Repository/BeerRepository.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "78"
+                  endingLineNumber = "78"
+                  offsetFromSymbolStart = "172">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A76A6C29-E13F-4E73-9713-C5A7F2FA2699"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Sources/Repository/Sources/Repository/BeerRepository.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "82"
+            endingLineNumber = "82"
+            landmarkName = "upToDateWithFallback()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "A76A6C29-E13F-4E73-9713-C5A7F2FA2699 - 942b543d6c5ef435"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(6) suspend resume partial function for Repository.BeerRepositoryImpl.upToDateWithFallback() async throws -&gt; ()"
+                  moduleName = "Repository"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jacob/Repos/bev/Sources/Repository/Sources/Repository/BeerRepository.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "82"
+                  endingLineNumber = "82"
+                  offsetFromSymbolStart = "460">
+               </Location>
+               <Location
+                  uuid = "A76A6C29-E13F-4E73-9713-C5A7F2FA2699 - 6a408df62476304b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(8) suspend resume partial function for Repository.BeerRepositoryImpl.upToDateWithFallback() async throws -&gt; ()"
+                  moduleName = "Repository"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jacob/Repos/bev/Sources/Repository/Sources/Repository/BeerRepository.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "82"
+                  endingLineNumber = "82"
+                  offsetFromSymbolStart = "272">
+               </Location>
+               <Location
+                  uuid = "A76A6C29-E13F-4E73-9713-C5A7F2FA2699 - 17c98359425c8fd"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(10) suspend resume partial function for Repository.BeerRepositoryImpl.upToDateWithFallback() async throws -&gt; ()"
+                  moduleName = "Repository"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jacob/Repos/bev/Sources/Repository/Sources/Repository/BeerRepository.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "82"
+                  endingLineNumber = "82"
+                  offsetFromSymbolStart = "264">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "FE976519-417F-4AA4-8D47-348539BB80A9"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Sources/Repository/Sources/Repository/BeerRepository.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
+            landmarkName = "upToDateWithFallback()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "FE976519-417F-4AA4-8D47-348539BB80A9 - 942b543d6c5ef4f7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(6) suspend resume partial function for Repository.BeerRepositoryImpl.upToDateWithFallback() async throws -&gt; ()"
+                  moduleName = "Repository"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jacob/Repos/bev/Sources/Repository/Sources/Repository/BeerRepository.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "84"
+                  endingLineNumber = "84"
+                  offsetFromSymbolStart = "644">
+               </Location>
+               <Location
+                  uuid = "FE976519-417F-4AA4-8D47-348539BB80A9 - 6a408df624763089"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(8) suspend resume partial function for Repository.BeerRepositoryImpl.upToDateWithFallback() async throws -&gt; ()"
+                  moduleName = "Repository"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jacob/Repos/bev/Sources/Repository/Sources/Repository/BeerRepository.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "84"
+                  endingLineNumber = "84"
+                  offsetFromSymbolStart = "404">
+               </Location>
+               <Location
+                  uuid = "FE976519-417F-4AA4-8D47-348539BB80A9 - 17c98359425c83f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(10) suspend resume partial function for Repository.BeerRepositoryImpl.upToDateWithFallback() async throws -&gt; ()"
+                  moduleName = "Repository"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jacob/Repos/bev/Sources/Repository/Sources/Repository/BeerRepository.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "84"
+                  endingLineNumber = "84"
+                  offsetFromSymbolStart = "396">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>
