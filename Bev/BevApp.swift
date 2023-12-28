@@ -10,6 +10,12 @@ import SwiftUI
 @main
 struct BevApp: App {
     
+    init() {
+        if ProcessInfo.processInfo.arguments.contains("UI-TESTING") {
+           UIView.setAnimationsEnabled(false)
+        }
+    }
+    
     var body: some Scene {
         WindowGroup {
             BeerListView()

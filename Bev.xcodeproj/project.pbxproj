@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1643E84C2A57522E00A6FBF0 /* BeerDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1643E84B2A57522E00A6FBF0 /* BeerDetailView.swift */; };
 		164FD0762AC2055C005E5E86 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 164FD0752AC2055C005E5E86 /* Localizable.xcstrings */; };
+		16502CFE2B3DBB9100831FCF /* BevUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16502CFD2B3DBB9100831FCF /* BevUITests.swift */; };
 		167879E729D9A1BB0064C8AE /* BeerListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167879E429D9A1BB0064C8AE /* BeerListView.swift */; };
 		167879E829D9A1BB0064C8AE /* BeerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167879E529D9A1BB0064C8AE /* BeerViewModel.swift */; };
 		167879E929D9A1BB0064C8AE /* BeerListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167879E629D9A1BB0064C8AE /* BeerListCell.swift */; };
@@ -24,6 +25,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		16502D012B3DBB9100831FCF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 169C6F9429D8627300474092 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 169C6F9B29D8627300474092;
+			remoteInfo = Bev;
+		};
 		169C6FAD29D8627500474092 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 169C6F9429D8627300474092 /* Project object */;
@@ -36,6 +44,9 @@
 /* Begin PBXFileReference section */
 		1643E84B2A57522E00A6FBF0 /* BeerDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerDetailView.swift; sourceTree = "<group>"; };
 		164FD0752AC2055C005E5E86 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		16502CFB2B3DBB9100831FCF /* BevUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BevUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		16502CFD2B3DBB9100831FCF /* BevUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BevUITests.swift; sourceTree = "<group>"; };
+		16502D062B3DBD5000831FCF /* BevTestPlan.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = BevTestPlan.xctestplan; sourceTree = "<group>"; };
 		167879E429D9A1BB0064C8AE /* BeerListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeerListView.swift; sourceTree = "<group>"; };
 		167879E529D9A1BB0064C8AE /* BeerViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeerViewModel.swift; sourceTree = "<group>"; };
 		167879E629D9A1BB0064C8AE /* BeerListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeerListCell.swift; sourceTree = "<group>"; };
@@ -54,6 +65,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		16502CF82B3DBB9100831FCF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		169C6F9929D8627300474092 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -109,6 +127,14 @@
 			path = Feature;
 			sourceTree = "<group>";
 		};
+		16502CFC2B3DBB9100831FCF /* BevUITests */ = {
+			isa = PBXGroup;
+			children = (
+				16502CFD2B3DBB9100831FCF /* BevUITests.swift */,
+			);
+			path = BevUITests;
+			sourceTree = "<group>";
+		};
 		167879E229D9A1890064C8AE /* Beer */ = {
 			isa = PBXGroup;
 			children = (
@@ -142,8 +168,10 @@
 		169C6F9329D8627300474092 = {
 			isa = PBXGroup;
 			children = (
+				16502D062B3DBD5000831FCF /* BevTestPlan.xctestplan */,
 				169C6F9E29D8627300474092 /* Bev */,
 				169C6FAF29D8627500474092 /* BevTests */,
+				16502CFC2B3DBB9100831FCF /* BevUITests */,
 				167879EE29D9A4310064C8AE /* Sources */,
 				169C6F9D29D8627300474092 /* Products */,
 				1604B2C829D8848800097F7F /* Frameworks */,
@@ -155,6 +183,7 @@
 			children = (
 				169C6F9C29D8627300474092 /* Bev.app */,
 				169C6FAC29D8627500474092 /* BevTests.xctest */,
+				16502CFB2B3DBB9100831FCF /* BevUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -189,6 +218,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		16502CFA2B3DBB9100831FCF /* BevUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 16502D052B3DBB9100831FCF /* Build configuration list for PBXNativeTarget "BevUITests" */;
+			buildPhases = (
+				16502CF72B3DBB9100831FCF /* Sources */,
+				16502CF82B3DBB9100831FCF /* Frameworks */,
+				16502CF92B3DBB9100831FCF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				16502D022B3DBB9100831FCF /* PBXTargetDependency */,
+			);
+			name = BevUITests;
+			productName = BevUITests;
+			productReference = 16502CFB2B3DBB9100831FCF /* BevUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		169C6F9B29D8627300474092 /* Bev */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 169C6FC029D8627500474092 /* Build configuration list for PBXNativeTarget "Bev" */;
@@ -239,9 +286,13 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1410;
+				LastSwiftUpdateCheck = 1510;
 				LastUpgradeCheck = 1410;
 				TargetAttributes = {
+					16502CFA2B3DBB9100831FCF = {
+						CreatedOnToolsVersion = 15.1;
+						TestTargetID = 169C6F9B29D8627300474092;
+					};
 					169C6F9B29D8627300474092 = {
 						CreatedOnToolsVersion = 14.1;
 					};
@@ -271,11 +322,19 @@
 			targets = (
 				169C6F9B29D8627300474092 /* Bev */,
 				169C6FAB29D8627500474092 /* BevTests */,
+				16502CFA2B3DBB9100831FCF /* BevUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		16502CF92B3DBB9100831FCF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		169C6F9A29D8627300474092 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -296,6 +355,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		16502CF72B3DBB9100831FCF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				16502CFE2B3DBB9100831FCF /* BevUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		169C6F9829D8627300474092 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -320,6 +387,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		16502D022B3DBB9100831FCF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 169C6F9B29D8627300474092 /* Bev */;
+			targetProxy = 16502D012B3DBB9100831FCF /* PBXContainerItemProxy */;
+		};
 		169C6FAE29D8627500474092 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 169C6F9B29D8627300474092 /* Bev */;
@@ -328,6 +400,49 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		16502D032B3DBB9100831FCF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jacob.BevUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Bev;
+			};
+			name = Debug;
+		};
+		16502D042B3DBB9100831FCF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jacob.BevUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Bev;
+			};
+			name = Release;
+		};
 		169C6FBE29D8627500474092 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -558,6 +673,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		16502D052B3DBB9100831FCF /* Build configuration list for PBXNativeTarget "BevUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				16502D032B3DBB9100831FCF /* Debug */,
+				16502D042B3DBB9100831FCF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		169C6F9729D8627300474092 /* Build configuration list for PBXProject "Bev" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

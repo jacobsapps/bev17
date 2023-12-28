@@ -40,12 +40,20 @@ public final class BeerRepositoryImpl: BeerRepository {
     
     public func loadBeers(strategy: DataAccessStrategy) async {
         beersPublisher.send(.loading)
+        
+        guard !isUITesting() else {
+            sendMockBeers()
+            return
+        }
+        
         do {
-            switch strategy {
+            switch strategy {        
             case .fastestAvailable:
                 try await fastestAvailable()
+                
             case .upToDateWithFallback:
                 try await upToDateWithFallback()
+                
             case .returnMultipleTimes:
                 try await returnMultipleTimes()
             }
@@ -109,5 +117,28 @@ public final class BeerRepositoryImpl: BeerRepository {
                 throw error
             }
         }
+    }
+    
+    // MARK: - UI Testing Helpers
+    
+    private func isUITesting() -> Bool {
+        ProcessInfo.processInfo.arguments.contains("UI-TESTING")
+    }
+    
+    private func sendMockBeers() {
+        let beers = [createBeer(id: 1, name: "Buzz"), createBeer(id: 2, name: "Trashy Blonde")]
+        beersPublisher.send(.success(beers))
+    }
+    
+    private func createBeer(id: Int, name: String, imageURL: String? = "", yeast: String? = "") -> Beer {
+        Beer(id: id,
+             name: name,
+             tagline: "",
+             firstBrewed: "",
+             details: "",
+             imageURL: imageURL,
+             abv: 0,
+             ingredients: Ingredients(malt: [], hops: [], yeast: yeast),
+             foodPairing: ["Peanuts"])
     }
 }
