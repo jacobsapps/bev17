@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<testsuites name='RepositoryTests.xctest' tests='36' failures='0'>
+  <testsuite name='BevTests.BeerViewModelTests' tests='14' failures='0'>
+    <testcase classname='BevTests.BeerViewModelTests' name='test_initialState_withCombine' time='0.045'/>
+    <testcase classname='BevTests.BeerViewModelTests' name='test_listenerSentURLError_setsErrorMessageAndTogglesAlert_withAsyncSequence' time='0.168'/>
+    <testcase classname='BevTests.BeerViewModelTests' name='test_initialState_withAsyncSequence' time='0.000'/>
+    <testcase classname='BevTests.BeerViewModelTests' name='test_listenerSentBeersSuccessfully_setsBeers_withCombine' time='0.009'/>
+    <testcase classname='BevTests.BeerViewModelTests' name='test_refreshBeers_tellsRepositoryToLoad_withAsyncSequence' time='0.000'/>
+    <testcase classname='BevTests.BeerViewModelTests' name='test_listenerSentError_setsErrorMessageAndTogglesAlert_withCombine' time='0.005'/>
+    <testcase classname='BevTests.BeerViewModelTests' name='test_listenerSentOfflineError_setsErrorMessageAndTogglesAlert_withCombine' time='0.001'/>
+    <testcase classname='BevTests.BeerViewModelTests' name='test_listenerSentOfflineError_setsErrorMessageAndTogglesAlert_withAsyncSequence' time='0.001'/>
+    <testcase classname='BevTests.BeerViewModelTests' name='test_listenerSentError_setsErrorMessageAndTogglesAlert_withAsyncSequence' time='0.000'/>
+    <testcase classname='BevTests.BeerViewModelTests' name='test_listenerSentBeersSuccessfully_setsBeers_withAsyncSequence' time='0.001'/>
+    <testcase classname='BevTests.BeerViewModelTests' name='test_loadBeers_callsLoadOnRepository_withCombine' time='0.000'/>
+    <testcase classname='BevTests.BeerViewModelTests' name='test_refreshBeers_tellsRepositoryToLoad_withCombine' time='0.000'/>
+    <testcase classname='BevTests.BeerViewModelTests' name='test_listenerSentURLError_setsErrorMessageAndTogglesAlert_withCombine' time='0.001'/>
+    <testcase classname='BevTests.BeerViewModelTests' name='test_loadBeers_callsLoadOnRepository_withAsyncSequence' time='0.001'/>
+  </testsuite>
+  <testsuite name='BevUITests.BevUITests' tests='4' failures='0'>
+    <testcase classname='BevUITests.BevUITests' name='test_searchBeer' time='8.011'/>
+    <testcase classname='BevUITests.BevUITests' name='test_selectBeer_navigatesToDetailsScreen' time='4.622'/>
+    <testcase classname='BevUITests.BevUITests' name='test_load_displaysBeers' time='5.945'/>
+    <testcase classname='BevUITests.BevUITests' name='test_launch_displaysNavTitle' time='6.495'/>
+  </testsuite>
+  <testsuite name='DomainTests.BeerTests' tests='7' failures='0'>
+    <testcase classname='DomainTests.BeerTests' name='test_decodeJSON_withInvalidDataFormat_throwsError' time='0.018'/>
+    <testcase classname='DomainTests.BeerTests' name='test_decodeJSON_parsesKeyInformation' time='0.002'/>
+    <testcase classname='DomainTests.BeerTests' name='test_sample_createsSampleBeer' time='0.000'/>
+    <testcase classname='DomainTests.BeerTests' name='test_equality_checksForMatchingID' time='0.000'/>
+    <testcase classname='DomainTests.BeerTests' name='test_decodeJSON_parsesSnakeCaseCodingKeys' time='0.000'/>
+    <testcase classname='DomainTests.BeerTests' name='test_decodeJSON_parsesSupplementaryInformation' time='0.000'/>
+    <testcase classname='DomainTests.BeerTests' name='test_optionalValues' time='0.000'/>
+  </testsuite>
+  <testsuite name='NetworkingTests.BeerAPITests' tests='8' failures='0'>
+    <testcase classname='NetworkingTests.BeerAPITests' name='test_getBeers_requestFailure_throwsError' time='0.009'/>
+    <testcase classname='NetworkingTests.BeerAPITests' name='test_getBeers_returnsBeer' time='0.003'/>
+    <testcase classname='NetworkingTests.BeerAPITests' name='test_getBeers_invalidURL_throwsCouldNotConstructURLError' time='0.000'/>
+    <testcase classname='NetworkingTests.BeerAPITests' name='test_getBeers_invalidJSON_throwsDecodingError' time='0.001'/>
+    <testcase classname='NetworkingTests.BeerAPITests' name='test_getBeers_createsCorrectURL' time='0.000'/>
+    <testcase classname='NetworkingTests.BeerAPITests' name='test_getBeers_emptyData_throwsDecodingError' time='0.000'/>
+    <testcase classname='NetworkingTests.BeerAPITests' name='test_getBeers_offline_throwsError' time='0.000'/>
+    <testcase classname='NetworkingTests.BeerAPITests' name='test_getBeers_returnsEmptyArray' time='0.102'/>
+  </testsuite>
+  <testsuite name='RepositoryTests.BeerRepositoryTests' tests='3' failures='0'>
+    <testcase classname='RepositoryTests.BeerRepositoryTests' name='test_loadBeers_success_sendsBeersToPublisher' time='0.005'/>
+    <testcase classname='RepositoryTests.BeerRepositoryTests' name='test_loadBeers_upToDateWithFallback_callsAPI' time='0.001'/>
+    <testcase classname='RepositoryTests.BeerRepositoryTests' name='test_loadBeers_failure_sendsErrorToPublisher' time='0.001'/>
+  </testsuite>
+</testsuites>

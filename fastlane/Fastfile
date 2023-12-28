@@ -1,0 +1,19 @@
+default_platform(:ios)
+
+platform :ios do
+
+  desc "Run tests on each PR"
+  lane :test do
+    scan(device: "iPhone 15 Pro")
+  end
+
+  desc  "Deploy app to App Store Connect"
+  lane :deploy do 
+    # match
+    # increment build 
+    # xcode select 
+    # gym 
+    # pilot 
+  end 
+
+end
