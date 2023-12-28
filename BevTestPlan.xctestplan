@@ -22,7 +22,6 @@
   },
   "testTargets" : [
     {
-      "parallelizable" : true,
       "target" : {
         "containerPath" : "container:Bev.xcodeproj",
         "identifier" : "169C6FAB29D8627500474092",
@@ -30,7 +29,6 @@
       }
     },
     {
-      "parallelizable" : true,
       "target" : {
         "containerPath" : "container:Bev.xcodeproj",
         "identifier" : "16502CFA2B3DBB9100831FCF",
@@ -38,7 +36,6 @@
       }
     },
     {
-      "parallelizable" : true,
       "target" : {
         "containerPath" : "container:Sources\/Database",
         "identifier" : "DatabaseTests",
@@ -46,7 +43,6 @@
       }
     },
     {
-      "parallelizable" : true,
       "target" : {
         "containerPath" : "container:Sources\/Domain",
         "identifier" : "DomainTests",
@@ -54,7 +50,6 @@
       }
     },
     {
-      "parallelizable" : true,
       "target" : {
         "containerPath" : "container:Sources\/Networking",
         "identifier" : "NetworkingTests",
@@ -62,7 +57,6 @@
       }
     },
     {
-      "parallelizable" : true,
       "target" : {
         "containerPath" : "container:Sources\/Repository",
         "identifier" : "RepositoryTests",
