@@ -1,0 +1,20 @@
+name: Deploy
+env:
+  GOOGLE_CLOUD_KEYS: ${{ secrets.GOOGLE_CLOUD_KEYS }}
+  APP_STORE_CONNECT_API_KEY: ${{ secrets.APP_STORE_CONNECT_API_KEY }}
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  deploy:
+    timeout-minutes: 10
+    steps:    
+      - uses: actions/checkout@v3
+
+      - name: Create gc_Keys
+        run: echo $GOOGLE_CLOUD_KEYS >> gc_keys.json
+
+      - name: App Store Deploy
+        run: fastlane deploy

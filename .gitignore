@@ -1,0 +1,8 @@
+gc_keys.json
+Bev.app.dSYM.zip
+Bev.ipa
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/test_output/*
+fastlane/metadata/*
+fastlane/screenshots/*
