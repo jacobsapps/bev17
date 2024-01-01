@@ -10,5 +10,9 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
+      - uses: maxim-lobanov/setup-xcode@v1
+        with:
+          xcode-version: 15.1
+
       - name: Run Unit Tests
         run: fastlane test
