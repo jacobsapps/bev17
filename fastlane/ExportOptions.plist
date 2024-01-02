@@ -22,6 +22,6 @@
 	<key>uploadBitcode</key>
 	<false/>
 	<key>uploadSymbols</key>
-	<true/>
+	<false/>
 </dict>
 </plist>
