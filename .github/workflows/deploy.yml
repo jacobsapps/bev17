@@ -23,5 +23,8 @@ jobs:
       - name: Create gc_Keys
         run: echo $GOOGLE_CLOUD_KEYS >> gc_keys.json
 
+      - name: App Store Test
+        run: fastlane test
+
       - name: App Store Deploy
         run: fastlane deploy
