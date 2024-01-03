@@ -16,14 +16,14 @@ let package = Package(
             targets: ["RepositoryMocks"]),
     ],
     dependencies: [
-        .package(url: "./Database", from: "1.0.0"),
+//        .package(url: "./Database", from: "1.0.0"),
         .package(url: "./Networking", from: "1.0.0"),
         .package(url: "./Domain", from: "1.0.0"),
     ],
     targets: [
         .target(
             name: "Repository",
-            dependencies: ["Database", "Networking", "Domain"]),
+            dependencies: [/*"Database", */"Networking", "Domain"]),
         .target(
             name: "RepositoryMocks",
             dependencies: [
@@ -35,7 +35,7 @@ let package = Package(
             name: "RepositoryTests",
             dependencies: [
                 "Repository",
-                .product(name: "DatabaseMocks", package: "Database"),
+//                .product(name: "DatabaseMocks", package: "Database"),
                 .product(name: "NetworkingMocks", package: "Networking")
             ]),
     ]
