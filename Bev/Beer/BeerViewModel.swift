@@ -10,17 +10,17 @@ import Domain
 import Repository
 import SwiftUI
 
-@Observable
-final class BeerViewModel {
+@MainActor
+final class BeerViewModel: ObservableObject {
     
     enum BeerListeningStrategy {
         case combine
         case asyncSequence
     }
     
-    private(set) var beers: [Beer] = []
-    private(set) var isLoading: Bool = false
-    var showAlert: Bool = false
+    @Published private(set) var beers: [Beer] = []
+    @Published private(set) var isLoading: Bool = false
+    @Published var showAlert: Bool = false
     
     private(set) var errorMessage: String?
     private var cancelBag = Set<AnyCancellable>()
@@ -42,32 +42,29 @@ final class BeerViewModel {
     }
     
     func loadBeers() async {
-        await repository.loadBeers(strategy: .returnMultipleTimes)
+        await repository.loadBeers()
     }
     
     func refreshBeers() {
         Task {
-            await repository.loadBeers(strategy: .upToDateWithFallback)
+            await repository.loadBeers()
         }
     }
     
     private func setupBeerListener() {
         repository.beersPublisher
             .receive(on: RunLoop.main)
-            .sink(receiveValue: { loadingState in
-                Task { [weak self] in
-                    await self?.handleBeer(loadingState: loadingState)
-                }
+            .sink(receiveValue: { [weak self] in
+                self?.handleBeer(loadingState: $0)
             }).store(in: &cancelBag)
     }
     
     private func setupBeerSequence() async {
         for await loadingState in repository.beersPublisher.values {
-            await handleBeer(loadingState: loadingState)
+            handleBeer(loadingState: loadingState)
         }
     }
     
-    @MainActor
     private func handleBeer(loadingState: LoadingState<[Beer]>) {
         switch loadingState {
         case .idle:

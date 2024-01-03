@@ -36,7 +36,7 @@ final class BeerAPITests: XCTestCase {
         _ = try? await sut.getBeers()
         XCTAssertEqual(mockURLSession.capturedURL?.host, "api.punkapi.com")
         XCTAssertEqual(mockURLSession.capturedURL?.path, "/v2/beers")
-        XCTAssertEqual(mockURLSession.capturedURL?.query(percentEncoded: false), "page=1&per_page=50")    
+        XCTAssertEqual(mockURLSession.capturedURL?.query(percentEncoded: false), "page=1&per_page=80")    
     }
     
     func test_getBeers_returnsBeer() async {
@@ -56,7 +56,7 @@ final class BeerAPITests: XCTestCase {
     }
 
     func test_getBeers_invalidURL_throwsCouldNotConstructURLError() async {
-        sut = BeerAPIImpl(baseURL: "<>^`{|}", session: mockURLSession)
+        sut = BeerAPIImpl(baseURL: "<", session: mockURLSession)
         do {
             _ = try await sut.getBeers()
             XCTFail("Expected to fail")

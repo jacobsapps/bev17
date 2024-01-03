@@ -19,12 +19,10 @@ public final class MockBeerRepository: BeerRepository {
     
     public var stubLoadBeersResponse: LoadingState<[Beer]>?
     public var didLoadBeers: (() -> Void)?
-    public private(set) var loadBeersCallCount = 0
-    public private(set) var capturedStrategy: DataAccessStrategy?
-    public func loadBeers(strategy: DataAccessStrategy) async {
+    public var loadBeersCallCount = 0
+    public func loadBeers() async {
         defer { didLoadBeers?() }
         loadBeersCallCount += 1
-        capturedStrategy = strategy
         beersPublisher.send(stubLoadBeersResponse!)
     }
 }

@@ -5,7 +5,6 @@
 //  Created by Jacob Bartlett on 06/07/2023.
 //
 
-import CachedAsyncImage
 import Domain
 import SwiftUI
 
@@ -17,7 +16,7 @@ struct BeerDetailView: View {
         List {
             image
             tagline
-            details
+            description
             brewInformation
             foodPairings
             yeast
@@ -28,7 +27,7 @@ struct BeerDetailView: View {
     }
     
     private var image: some View {
-        CachedAsyncImage(
+        AsyncImage(
             url: URL(string: beer.imageURL ?? ""),
             content: { image in
                 image
@@ -47,31 +46,32 @@ struct BeerDetailView: View {
             .foregroundColor(.secondary)
     }
     
-    private var details: some View {
-        Text(beer.details)
+    private var description: some View {
+        Text(beer.description)
             .font(.body)
             .foregroundColor(.primary.opacity(0.98))
     }
     
     private var brewInformation: some View {
         HStack {
-            Text("Feature.Beer.DetailView.FirstBrewed \(beer.firstBrewed)")
-                .font(.body)
+            Text("First brewed \(beer.firstBrewed)")
+                .font(.title3)
                 .fontWeight(.light)
                 .foregroundColor(.primary.opacity(0.98))
             
             Spacer()
             
-            Text("Feature.Beer.DetailView.ABV \(beer.abv)")
-                .font(.body)
+            Text(String(format: "%.2f", beer.abv) + "% abv")
+                .font(.title3)
+                .fontWeight(.light)
                 .foregroundColor(.secondary)
         }
     }
-    
+
     @ViewBuilder
     private var foodPairings: some View {
         if !beer.foodPairing.isEmpty {
-            Section("Feature.Beer.DetailView.DrinkWith") {
+            Section("Drink this with") {
                 ForEach(beer.foodPairing, id: \.self) {
                     Text($0)
                         .font(.body)
@@ -84,7 +84,7 @@ struct BeerDetailView: View {
     @ViewBuilder
     private var yeast: some View {
         if let yeast = beer.ingredients.yeast {
-            Section("Feature.Beer.DetailView.Yeast") {
+            Section("Yeast") {
                 Text(yeast)
                     .font(.body)
                     .foregroundColor(.primary.opacity(0.98))
@@ -95,7 +95,7 @@ struct BeerDetailView: View {
     @ViewBuilder
     private var malt: some View {
         if !beer.ingredients.malt.isEmpty {
-            Section("Feature.Beer.DetailView.Malt") {
+            Section("Malt") {
                 ForEach(beer.ingredients.malt.map { $0.name }, id: \.self) {
                     Text($0)
                         .font(.body)
@@ -108,7 +108,7 @@ struct BeerDetailView: View {
     @ViewBuilder
     private var hops: some View {
         if !beer.ingredients.hops.isEmpty {
-            Section("Feature.Beer.DetailView.Hops") {
+            Section("Hops") {
                 ForEach(beer.ingredients.hops.map { $0.name }, id: \.self) {
                     Text($0)
                         .font(.body)

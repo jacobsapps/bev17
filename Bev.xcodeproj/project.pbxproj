@@ -8,30 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		1643E84C2A57522E00A6FBF0 /* BeerDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1643E84B2A57522E00A6FBF0 /* BeerDetailView.swift */; };
-		164FD0762AC2055C005E5E86 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 164FD0752AC2055C005E5E86 /* Localizable.xcstrings */; };
-		16502CFE2B3DBB9100831FCF /* BevUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16502CFD2B3DBB9100831FCF /* BevUITests.swift */; };
 		167879E729D9A1BB0064C8AE /* BeerListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167879E429D9A1BB0064C8AE /* BeerListView.swift */; };
 		167879E829D9A1BB0064C8AE /* BeerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167879E529D9A1BB0064C8AE /* BeerViewModel.swift */; };
 		167879E929D9A1BB0064C8AE /* BeerListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167879E629D9A1BB0064C8AE /* BeerListCell.swift */; };
 		167879EC29D9A3E70064C8AE /* Repository in Frameworks */ = {isa = PBXBuildFile; productRef = 167879EB29D9A3E70064C8AE /* Repository */; };
 		1690EA6D29DAB5A60025BD8C /* RepositoryMocks in Frameworks */ = {isa = PBXBuildFile; productRef = 1690EA6C29DAB5A60025BD8C /* RepositoryMocks */; };
-		169B738229DA021400B1DE66 /* BeerViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169B738129DA021400B1DE66 /* BeerViewModelTests.swift */; };
 		169C6FA029D8627300474092 /* BevApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169C6F9F29D8627300474092 /* BevApp.swift */; };
 		169C6FA429D8627500474092 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 169C6FA329D8627500474092 /* Assets.xcassets */; };
-		169E7E3F2AD9DAA20020727B /* CachedAsyncImage in Frameworks */ = {isa = PBXBuildFile; productRef = 169E7E3E2AD9DAA20020727B /* CachedAsyncImage */; };
-		169E7E412AD9E5630020727B /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 169E7E402AD9E5630020727B /* Launch Screen.storyboard */; };
-		169E7E442AD9ECE20020727B /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169E7E432AD9ECE20020727B /* View+Extensions.swift */; };
-		16CA22B02ACF611300D68143 /* ObservationTestUtils in Frameworks */ = {isa = PBXBuildFile; productRef = 16CA22AF2ACF611300D68143 /* ObservationTestUtils */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		16502D012B3DBB9100831FCF /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 169C6F9429D8627300474092 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 169C6F9B29D8627300474092;
-			remoteInfo = Bev;
-		};
 		169C6FAD29D8627500474092 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 169C6F9429D8627300474092 /* Project object */;
@@ -43,41 +29,24 @@
 
 /* Begin PBXFileReference section */
 		1643E84B2A57522E00A6FBF0 /* BeerDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerDetailView.swift; sourceTree = "<group>"; };
-		164FD0752AC2055C005E5E86 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
-		16502CFB2B3DBB9100831FCF /* BevUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BevUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		16502CFD2B3DBB9100831FCF /* BevUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BevUITests.swift; sourceTree = "<group>"; };
-		16502D062B3DBD5000831FCF /* BevTestPlan.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = BevTestPlan.xctestplan; sourceTree = "<group>"; };
 		167879E429D9A1BB0064C8AE /* BeerListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeerListView.swift; sourceTree = "<group>"; };
 		167879E529D9A1BB0064C8AE /* BeerViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeerViewModel.swift; sourceTree = "<group>"; };
 		167879E629D9A1BB0064C8AE /* BeerListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeerListCell.swift; sourceTree = "<group>"; };
 		167879EA29D9A1FC0064C8AE /* Domain */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Domain; sourceTree = "<group>"; };
-		169B738129DA021400B1DE66 /* BeerViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerViewModelTests.swift; sourceTree = "<group>"; };
 		169C6F9C29D8627300474092 /* Bev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bev.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		169C6F9F29D8627300474092 /* BevApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BevApp.swift; sourceTree = "<group>"; };
 		169C6FA329D8627500474092 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		169C6FAC29D8627500474092 /* BevTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BevTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		169C6FC929D8636300474092 /* Repository */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Repository; sourceTree = "<group>"; };
 		169C6FCA29D8637400474092 /* Networking */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Networking; sourceTree = "<group>"; };
-		169E7E402AD9E5630020727B /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
-		169E7E432AD9ECE20020727B /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
-		16C26CDA2AC8E5CD0098734E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		16D8763A2ABF4CD000D4BB5C /* Database */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Database; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		16502CF82B3DBB9100831FCF /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		169C6F9929D8627300474092 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				167879EC29D9A3E70064C8AE /* Repository in Frameworks */,
-				169E7E3F2AD9DAA20020727B /* CachedAsyncImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,7 +55,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				1690EA6D29DAB5A60025BD8C /* RepositoryMocks in Frameworks */,
-				16CA22B02ACF611300D68143 /* ObservationTestUtils in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,49 +66,6 @@
 			children = (
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		1627CDF52AD3459E00ACCF9A /* Feature */ = {
-			isa = PBXGroup;
-			children = (
-				167879E229D9A1890064C8AE /* Beer */,
-			);
-			path = Feature;
-			sourceTree = "<group>";
-		};
-		164FD0732AC20528005E5E86 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				169E7E402AD9E5630020727B /* Launch Screen.storyboard */,
-				169C6FA329D8627500474092 /* Assets.xcassets */,
-				164FD0752AC2055C005E5E86 /* Localizable.xcstrings */,
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
-		164FD0742AC2053C005E5E86 /* Feature */ = {
-			isa = PBXGroup;
-			children = (
-				167879E329D9A1BB0064C8AE /* Beer */,
-				169E7E422AD9ECD60020727B /* Utils */,
-			);
-			path = Feature;
-			sourceTree = "<group>";
-		};
-		16502CFC2B3DBB9100831FCF /* BevUITests */ = {
-			isa = PBXGroup;
-			children = (
-				16502CFD2B3DBB9100831FCF /* BevUITests.swift */,
-			);
-			path = BevUITests;
-			sourceTree = "<group>";
-		};
-		167879E229D9A1890064C8AE /* Beer */ = {
-			isa = PBXGroup;
-			children = (
-				169B738129DA021400B1DE66 /* BeerViewModelTests.swift */,
-			);
-			path = Beer;
 			sourceTree = "<group>";
 		};
 		167879E329D9A1BB0064C8AE /* Beer */ = {
@@ -158,20 +83,24 @@
 			isa = PBXGroup;
 			children = (
 				169C6FC929D8636300474092 /* Repository */,
-				16D8763A2ABF4CD000D4BB5C /* Database */,
 				169C6FCA29D8637400474092 /* Networking */,
 				167879EA29D9A1FC0064C8AE /* Domain */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
 		};
+		1698F48C2AD0B2FF00C06FED /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				169C6FA329D8627500474092 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		169C6F9329D8627300474092 = {
 			isa = PBXGroup;
 			children = (
-				16502D062B3DBD5000831FCF /* BevTestPlan.xctestplan */,
 				169C6F9E29D8627300474092 /* Bev */,
-				169C6FAF29D8627500474092 /* BevTests */,
-				16502CFC2B3DBB9100831FCF /* BevUITests */,
 				167879EE29D9A4310064C8AE /* Sources */,
 				169C6F9D29D8627300474092 /* Products */,
 				1604B2C829D8848800097F7F /* Frameworks */,
@@ -183,7 +112,6 @@
 			children = (
 				169C6F9C29D8627300474092 /* Bev.app */,
 				169C6FAC29D8627500474092 /* BevTests.xctest */,
-				16502CFB2B3DBB9100831FCF /* BevUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -191,51 +119,16 @@
 		169C6F9E29D8627300474092 /* Bev */ = {
 			isa = PBXGroup;
 			children = (
-				16C26CDA2AC8E5CD0098734E /* Info.plist */,
 				169C6F9F29D8627300474092 /* BevApp.swift */,
-				164FD0742AC2053C005E5E86 /* Feature */,
-				164FD0732AC20528005E5E86 /* Resources */,
+				167879E329D9A1BB0064C8AE /* Beer */,
+				1698F48C2AD0B2FF00C06FED /* Resources */,
 			);
 			path = Bev;
-			sourceTree = "<group>";
-		};
-		169C6FAF29D8627500474092 /* BevTests */ = {
-			isa = PBXGroup;
-			children = (
-				1627CDF52AD3459E00ACCF9A /* Feature */,
-			);
-			path = BevTests;
-			sourceTree = "<group>";
-		};
-		169E7E422AD9ECD60020727B /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-				169E7E432AD9ECE20020727B /* View+Extensions.swift */,
-			);
-			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		16502CFA2B3DBB9100831FCF /* BevUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 16502D052B3DBB9100831FCF /* Build configuration list for PBXNativeTarget "BevUITests" */;
-			buildPhases = (
-				16502CF72B3DBB9100831FCF /* Sources */,
-				16502CF82B3DBB9100831FCF /* Frameworks */,
-				16502CF92B3DBB9100831FCF /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				16502D022B3DBB9100831FCF /* PBXTargetDependency */,
-			);
-			name = BevUITests;
-			productName = BevUITests;
-			productReference = 16502CFB2B3DBB9100831FCF /* BevUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 		169C6F9B29D8627300474092 /* Bev */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 169C6FC029D8627500474092 /* Build configuration list for PBXNativeTarget "Bev" */;
@@ -251,7 +144,6 @@
 			name = Bev;
 			packageProductDependencies = (
 				167879EB29D9A3E70064C8AE /* Repository */,
-				169E7E3E2AD9DAA20020727B /* CachedAsyncImage */,
 			);
 			productName = Bev;
 			productReference = 169C6F9C29D8627300474092 /* Bev.app */;
@@ -273,7 +165,6 @@
 			name = BevTests;
 			packageProductDependencies = (
 				1690EA6C29DAB5A60025BD8C /* RepositoryMocks */,
-				16CA22AF2ACF611300D68143 /* ObservationTestUtils */,
 			);
 			productName = BevTests;
 			productReference = 169C6FAC29D8627500474092 /* BevTests.xctest */;
@@ -286,13 +177,9 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1510;
+				LastSwiftUpdateCheck = 1410;
 				LastUpgradeCheck = 1410;
 				TargetAttributes = {
-					16502CFA2B3DBB9100831FCF = {
-						CreatedOnToolsVersion = 15.1;
-						TestTargetID = 169C6F9B29D8627300474092;
-					};
 					169C6F9B29D8627300474092 = {
 						CreatedOnToolsVersion = 14.1;
 					};
@@ -312,35 +199,21 @@
 				Base,
 			);
 			mainGroup = 169C6F9329D8627300474092;
-			packageReferences = (
-				16CA22AE2ACF611300D68143 /* XCRemoteSwiftPackageReference "ObservationTestUtils" */,
-				169E7E3D2AD9DAA10020727B /* XCRemoteSwiftPackageReference "swiftui-cached-async-image" */,
-			);
 			productRefGroup = 169C6F9D29D8627300474092 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				169C6F9B29D8627300474092 /* Bev */,
 				169C6FAB29D8627500474092 /* BevTests */,
-				16502CFA2B3DBB9100831FCF /* BevUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		16502CF92B3DBB9100831FCF /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		169C6F9A29D8627300474092 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				169E7E412AD9E5630020727B /* Launch Screen.storyboard in Resources */,
-				164FD0762AC2055C005E5E86 /* Localizable.xcstrings in Resources */,
 				169C6FA429D8627500474092 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -355,14 +228,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		16502CF72B3DBB9100831FCF /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				16502CFE2B3DBB9100831FCF /* BevUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		169C6F9829D8627300474092 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -371,7 +236,6 @@
 				167879E729D9A1BB0064C8AE /* BeerListView.swift in Sources */,
 				167879E929D9A1BB0064C8AE /* BeerListCell.swift in Sources */,
 				169C6FA029D8627300474092 /* BevApp.swift in Sources */,
-				169E7E442AD9ECE20020727B /* View+Extensions.swift in Sources */,
 				1643E84C2A57522E00A6FBF0 /* BeerDetailView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -380,18 +244,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				169B738229DA021400B1DE66 /* BeerViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		16502D022B3DBB9100831FCF /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 169C6F9B29D8627300474092 /* Bev */;
-			targetProxy = 16502D012B3DBB9100831FCF /* PBXContainerItemProxy */;
-		};
 		169C6FAE29D8627500474092 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 169C6F9B29D8627300474092 /* Bev */;
@@ -400,57 +258,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		16502D032B3DBB9100831FCF /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 9H7GAWSLA8;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu17;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
-				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.jacob.BevUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
-				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Bev;
-			};
-			name = Debug;
-		};
-		16502D042B3DBB9100831FCF /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 9H7GAWSLA8;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu17;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
-				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.jacob.BevUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
-				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Bev;
-			};
-			name = Release;
-		};
 		169C6FBE29D8627500474092 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -501,7 +308,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -555,7 +362,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -575,25 +382,24 @@
 				DEVELOPMENT_TEAM = 9H7GAWSLA8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Bev/Info.plist;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "Jacob Bartlett, 2024";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = NO;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.jacobbartlett.bev;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jacob.Bev;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -602,34 +408,29 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
-				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 9H7GAWSLA8;
+				DEVELOPMENT_TEAM = 9H7GAWSLA8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Bev/Info.plist;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "Jacob Bartlett, 2024";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = NO;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.jacobbartlett.bev;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jacob.Bev;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "match AppStore com.jacobbartlett.bev";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -641,9 +442,8 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 9H7GAWSLA8;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -652,9 +452,6 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jacob.BevTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
-				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -671,9 +468,8 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 9H7GAWSLA8;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -682,9 +478,6 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jacob.BevTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
-				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -695,15 +488,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		16502D052B3DBB9100831FCF /* Build configuration list for PBXNativeTarget "BevUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				16502D032B3DBB9100831FCF /* Debug */,
-				16502D042B3DBB9100831FCF /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		169C6F9729D8627300474092 /* Build configuration list for PBXProject "Bev" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -733,25 +517,6 @@
 		};
 /* End XCConfigurationList section */
 
-/* Begin XCRemoteSwiftPackageReference section */
-		169E7E3D2AD9DAA10020727B /* XCRemoteSwiftPackageReference "swiftui-cached-async-image" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/lorenzofiamingo/swiftui-cached-async-image";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.1.1;
-			};
-		};
-		16CA22AE2ACF611300D68143 /* XCRemoteSwiftPackageReference "ObservationTestUtils" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/jacobsapps/ObservationTestUtils";
-			requirement = {
-				branch = main;
-				kind = branch;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
 /* Begin XCSwiftPackageProductDependency section */
 		167879EB29D9A3E70064C8AE /* Repository */ = {
 			isa = XCSwiftPackageProductDependency;
@@ -760,16 +525,6 @@
 		1690EA6C29DAB5A60025BD8C /* RepositoryMocks */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = RepositoryMocks;
-		};
-		169E7E3E2AD9DAA20020727B /* CachedAsyncImage */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 169E7E3D2AD9DAA10020727B /* XCRemoteSwiftPackageReference "swiftui-cached-async-image" */;
-			productName = CachedAsyncImage;
-		};
-		16CA22AF2ACF611300D68143 /* ObservationTestUtils */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 16CA22AE2ACF611300D68143 /* XCRemoteSwiftPackageReference "ObservationTestUtils" */;
-			productName = ObservationTestUtils;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

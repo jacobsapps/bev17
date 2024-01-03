@@ -10,12 +10,10 @@ import XCTest
 
 final class BeerTests: XCTestCase {
     
-    let decoder = JSONDecoder()
-    
     func test_decodeJSON_parsesKeyInformation() {
         
         guard let jsonData = getBeerJSON().data(using: .utf8),
-              let beer = try? decoder.decode([Beer].self, from: jsonData).first else {
+              let beer = try? JSONDecoder().decode([Beer].self, from: jsonData).first else {
             XCTFail("Failed to decode test data")
             return
         }
@@ -29,7 +27,7 @@ final class BeerTests: XCTestCase {
     func test_decodeJSON_parsesSupplementaryInformation() {
         
         guard let jsonData = getBeerJSON().data(using: .utf8),
-              let beer = try? decoder.decode([Beer].self, from: jsonData).first else {
+              let beer = try? JSONDecoder().decode([Beer].self, from: jsonData).first else {
             XCTFail("Failed to decode test data")
             return
         }
@@ -42,7 +40,7 @@ final class BeerTests: XCTestCase {
     func test_decodeJSON_parsesSnakeCaseCodingKeys() {
         
         guard let jsonData = getBeerJSON().data(using: .utf8),
-              let beer = try? decoder.decode([Beer].self, from: jsonData).first else {
+              let beer = try? JSONDecoder().decode([Beer].self, from: jsonData).first else {
             XCTFail("Failed to decode test data")
             return
         }
@@ -60,7 +58,7 @@ final class BeerTests: XCTestCase {
         
         do {
             let invalidData = "[{\"fake-data\"}]".data(using: .utf8)
-            _ = try decoder.decode([Beer].self, from: invalidData!)
+            _ = try JSONDecoder().decode([Beer].self, from: invalidData!)
             XCTFail("Expected to fail")
             
         } catch {
@@ -89,7 +87,7 @@ final class BeerTests: XCTestCase {
     func test_sample_createsSampleBeer() {
         let beer = Beer.sample()
         
-        XCTAssertEqual(beer.id, 999)
+        XCTAssertEqual(beer.id, 1)
         XCTAssertEqual(beer.name, "Beer")
         XCTAssertEqual(beer.tagline, "A nice beer")
         XCTAssertEqual(beer.abv, 5.5)
@@ -100,7 +98,7 @@ final class BeerTests: XCTestCase {
              name: name,
              tagline: "",
              firstBrewed: "",
-             details: "",
+             description: "",
              imageURL: imageURL,
              abv: 0,
              ingredients: Ingredients(malt: [], hops: [], yeast: yeast),
