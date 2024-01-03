@@ -21,8 +21,7 @@ platform :ios do
       api_key: api_key,
       force: true,
       skip_screenshots: true,
-      precheck_include_in_app_purchases: false,
-      export_compliance_uses_encryption: false
+      precheck_include_in_app_purchases: false
     )
   end 
 
