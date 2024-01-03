@@ -6,7 +6,7 @@
 //
 
 import Combine
-//import Database
+import Database
 import Domain
 import Foundation
 import Networking
@@ -28,14 +28,14 @@ public final class BeerRepositoryImpl: BeerRepository {
     public private(set) var beersPublisher = CurrentValueSubject<LoadingState<[Beer]>, Never>(.idle)
     
     private let api: BeerAPI
-//    private let db: BeerDB?
+    private let db: BeerDB?
     
     public init(
-        api: BeerAPI = BeerAPIImpl()//,
-//        db: BeerDB? = try? BeerDBImpl(inMemoryDB: false)
+        api: BeerAPI = BeerAPIImpl(),
+        db: BeerDB? = try? BeerDBImpl(inMemoryDB: false)
     ) {
         self.api = api
-//        self.db = db
+        self.db = db
     }
     
     public func loadBeers(strategy: DataAccessStrategy) async {
@@ -68,13 +68,13 @@ public final class BeerRepositoryImpl: BeerRepository {
             beersPublisher.send(.success(beers))
             return
             
-//        } else if let beers = try? await db?.getBeers() {
-//            beersPublisher.send(.success(beers))
-//            return
-//            
+        } else if let beers = try? await db?.getBeers() {
+            beersPublisher.send(.success(beers))
+            return
+            
         } else {   
             let beers = try await api.getAllBeers()
-//            try? await db?.save(beers: beers)
+            try? await db?.save(beers: beers)
             beersPublisher.send(.success(beers))
         }
     }
@@ -82,15 +82,15 @@ public final class BeerRepositoryImpl: BeerRepository {
     private func upToDateWithFallback() async throws {
         do {
             let beers = try await api.getAllBeers()
-//            try? await db?.save(beers: beers)
+            try? await db?.save(beers: beers)
             beersPublisher.send(.success(beers))
             
         } catch {
-//            if let beers = try? await db?.getBeers() {
-//                beersPublisher.send(.success(beers))
-//            } else {
+            if let beers = try? await db?.getBeers() {
+                beersPublisher.send(.success(beers))
+            } else {
                 throw error
-//            }
+            }
         }
     }
     
@@ -102,14 +102,14 @@ public final class BeerRepositoryImpl: BeerRepository {
             didSucceed = true
         }
         
-//        if let beers = try? await db?.getBeers() {
-//            beersPublisher.send(.success(beers))
-//            didSucceed = true
-//        }
+        if let beers = try? await db?.getBeers() {
+            beersPublisher.send(.success(beers))
+            didSucceed = true
+        }
 
         do {
             let beers = try await api.getAllBeers()
-//            try? await db?.save(beers: beers)
+            try? await db?.save(beers: beers)
             beersPublisher.send(.success(beers))
             
         } catch {
