@@ -1,4 +1,6 @@
 google_cloud_bucket_name("bevgckeys")
 storage_mode("google_cloud")
 type("appstore")
+app_identifier("com.jacobbartlett.bev")
+username("jacobbartlett95@gmail.com")
 team_id("9H7GAWSLA8")
