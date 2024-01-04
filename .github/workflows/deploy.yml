@@ -3,7 +3,7 @@ env:
   GOOGLE_CLOUD_KEYS: ${{ secrets.GOOGLE_CLOUD_KEYS }}
   APP_STORE_CONNECT_API_KEY_KEY: ${{ secrets.APP_STORE_CONNECT_API_KEY_KEY }}
   FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD: ${{ secrets.FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD }}
-  FASTLANE_SESSION: $ {{ secrets.FASTLANE_SESSION }}
+  FASTLANE_PASSWORD: $ {{ secrets.FASTLANE_PASSWORD }}
 
 on:
   push:
@@ -16,9 +16,9 @@ jobs:
     steps:    
       - uses: actions/checkout@v3
 
-      - uses: maxim-lobanov/setup-xcode@v1
-        with:
-          xcode-version: 15.1
+      # - uses: maxim-lobanov/setup-xcode@v1
+      #   with:
+      #     xcode-version: 15.1
 
       - name: Create gc_Keys
         run: echo $GOOGLE_CLOUD_KEYS >> gc_keys.json
