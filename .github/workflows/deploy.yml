@@ -4,6 +4,8 @@ env:
   APP_STORE_CONNECT_API_KEY_KEY: ${{ secrets.APP_STORE_CONNECT_API_KEY_KEY }}
   FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD: ${{ secrets.FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD }}
   FASTLANE_SESSION: $ {{ secrets.FASTLANE_SESSION }}
+  FASTLANE_USER: $ {{ secrets.FASTLANE_USER }}
+  FASTLANE_PASSWORD: $ {{ secrets.FASTLANE_PASSWORD }}
 
 on:
   push:
@@ -11,8 +13,8 @@ on:
 
 jobs:
   deploy:
-    runs-on: macos-13 # self-hosted
-    timeout-minutes: 15
+    runs-on: macos-13
+    timeout-minutes: 6
     steps:    
       - uses: actions/checkout@v3
 
@@ -24,4 +26,4 @@ jobs:
         run: echo $GOOGLE_CLOUD_KEYS >> gc_keys.json
 
       - name: App Store Deploy
-        run: fastlane deploy
+        run: fastlane deploy --verbose
