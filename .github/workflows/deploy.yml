@@ -11,7 +11,7 @@ on:
 
 jobs:
   deploy:
-    runs-on: local-deploy # macos-13
+    runs-on: self-hosted # macos-13
     timeout-minutes: 10
     steps:    
       - uses: actions/checkout@v3
