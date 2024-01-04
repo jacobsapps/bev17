@@ -9,7 +9,7 @@ platform :ios do
 
   desc  "Deploy app to App Store Connect"
   lane :deploy do 
-    match # (readonly: true)
+    match(readonly: true)
     # gym(
     #   export_options: "./fastlane/ExportOptions.plist"
     # )
