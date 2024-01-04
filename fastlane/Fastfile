@@ -9,10 +9,10 @@ platform :ios do
 
   desc  "Deploy app to App Store Connect"
   lane :deploy do 
-    match(readonly: true)
-    gym(
-      export_options: "./fastlane/ExportOptions.plist"
-    )
+    # match(readonly: true)
+    # gym(
+    #   export_options: "./fastlane/ExportOptions.plist"
+    # )
     # gym
     api_key = app_store_connect_api_key(
       key_id: "V4D62Q8UQB",
@@ -20,12 +20,12 @@ platform :ios do
       key_content: $APP_STORE_CONNECT_API_KEY_BASE64,
       is_key_content_base64: true
     )
-    deliver(
-      api_key: api_key,
-      force: true,
-      skip_screenshots: true,
-      precheck_include_in_app_purchases: false
-    )
+    # deliver(
+    #   api_key: api_key,
+    #   force: true,
+    #   skip_screenshots: true,
+    #   precheck_include_in_app_purchases: false
+    # )
   end 
 
 end
