@@ -11,14 +11,14 @@ on:
 
 jobs:
   deploy:
-    runs-on: macos-13
+    runs-on: local-deploy # macos-13
     timeout-minutes: 10
     steps:    
       - uses: actions/checkout@v3
 
-      - uses: maxim-lobanov/setup-xcode@v1
-        with:
-          xcode-version: 15.1
+      # - uses: maxim-lobanov/setup-xcode@v1
+      #   with:
+      #     xcode-version: 15.1
 
       - name: Create gc_Keys
         run: echo $GOOGLE_CLOUD_KEYS >> gc_keys.json
