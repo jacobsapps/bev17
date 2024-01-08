@@ -1,13 +1,11 @@
 name: Test
 on:
-  push:
-    branches: [ test-cache ]
-  # pull_request:
-  #   branches: [ main ]
+  pull_request:
+    branches: [ main ]
 
 jobs:
   test:
-    runs-on: self-hosted # macos-13
+    runs-on: macos-13
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@v3
@@ -26,9 +24,9 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-derived-data-
 
-      # - uses: maxim-lobanov/setup-xcode@v1
-      #   with:
-      #     xcode-version: 15.1
+      - uses: maxim-lobanov/setup-xcode@v1
+        with:
+          xcode-version: 15.1
 
       - name: Run Unit Tests
         run: fastlane test
