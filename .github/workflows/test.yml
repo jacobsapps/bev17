@@ -1,6 +1,6 @@
 name: Test
 on:
-  push: 
+  push:
     branches: [ test-cache ]
   # pull_request:
   #   branches: [ main ]
@@ -14,8 +14,8 @@ jobs:
 
       - uses: actions/cache@v3
         with:
-          path: ./.build
-          key: ${{ runner.os }}-spm-${{ hashFiles('**/Package.swift') }}
+          path: .build
+          key: ${{ runner.os }}-spm-${{ hashFiles('**/Package.resolved') }}
           restore-keys: |
             ${{ runner.os }}-spm-
 
@@ -26,9 +26,9 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-derived-data-
 
-      - uses: maxim-lobanov/setup-xcode@v1
-        with:
-          xcode-version: 15.1
+      # - uses: maxim-lobanov/setup-xcode@v1
+      #   with:
+      #     xcode-version: 15.1
 
       - name: Run Unit Tests
         run: fastlane test
