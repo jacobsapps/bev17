@@ -14,19 +14,19 @@ jobs:
         with:
           xcode-version: 15.1
 
-      - uses: actions/cache@v3
-        with:
-          path: .build
-          key: ${{ runner.os }}-spm-${{ hashFiles('**/Package.resolved') }}
-          restore-keys: |
-            ${{ runner.os }}-spm-
+      # - uses: actions/cache@v3
+      #   with:
+      #     path: .build
+      #     key: ${{ runner.os }}-spm-${{ hashFiles('**/Package.resolved') }}
+      #     restore-keys: |
+      #       ${{ runner.os }}-spm-
             
-      - uses: actions/cache@v3
-        with:
-          path: ~/Library/Developer/Xcode/DerivedData
-          key: ${{ runner.os }}-derived-data-${{ github.sha }}
-          restore-keys: |
-            ${{ runner.os }}-derived-data-
+      # - uses: actions/cache@v3
+      #   with:
+      #     path: ~/Library/Developer/Xcode/DerivedData
+      #     key: ${{ runner.os }}-derived-data-${{ github.sha }}
+      #     restore-keys: |
+      #       ${{ runner.os }}-derived-data-
 
       - name: Run Unit Tests
         run: fastlane test
