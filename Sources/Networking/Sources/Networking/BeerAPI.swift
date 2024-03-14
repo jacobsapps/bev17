@@ -65,9 +65,6 @@ public final class BeerAPIImpl: BeerAPI {
             allBeers.append(contentsOf: beers)
             currentPage += 1
             lastPageIsEmpty = beers.isEmpty
-            print(beers)
-            print(currentPage)
-            print(allBeers.count)
         }
         return allBeers
     }
