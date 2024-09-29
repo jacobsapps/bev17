@@ -6,10 +6,10 @@
 //
 
 import Domain
-import XCTest
+import Testing
 import DatabaseMocks
 @testable import Database
 
-final class BeerDBTests: XCTestCase {
+final class BeerDBTests {
     
 }

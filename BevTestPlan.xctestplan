@@ -29,6 +29,7 @@
       }
     },
     {
+      "enabled" : false,
       "target" : {
         "containerPath" : "container:Bev.xcodeproj",
         "identifier" : "16502CFA2B3DBB9100831FCF",

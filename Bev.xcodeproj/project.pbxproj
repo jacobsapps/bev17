@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		1643E84C2A57522E00A6FBF0 /* BeerDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1643E84B2A57522E00A6FBF0 /* BeerDetailView.swift */; };
 		164FD0762AC2055C005E5E86 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 164FD0752AC2055C005E5E86 /* Localizable.xcstrings */; };
-		16502CFE2B3DBB9100831FCF /* BevUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16502CFD2B3DBB9100831FCF /* BevUITests.swift */; };
 		167879E729D9A1BB0064C8AE /* BeerListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167879E429D9A1BB0064C8AE /* BeerListView.swift */; };
 		167879E829D9A1BB0064C8AE /* BeerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167879E529D9A1BB0064C8AE /* BeerViewModel.swift */; };
 		167879E929D9A1BB0064C8AE /* BeerListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167879E629D9A1BB0064C8AE /* BeerListCell.swift */; };
@@ -45,7 +44,6 @@
 		1643E84B2A57522E00A6FBF0 /* BeerDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerDetailView.swift; sourceTree = "<group>"; };
 		164FD0752AC2055C005E5E86 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		16502CFB2B3DBB9100831FCF /* BevUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BevUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		16502CFD2B3DBB9100831FCF /* BevUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BevUITests.swift; sourceTree = "<group>"; };
 		16502D062B3DBD5000831FCF /* BevTestPlan.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = BevTestPlan.xctestplan; sourceTree = "<group>"; };
 		167879E429D9A1BB0064C8AE /* BeerListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeerListView.swift; sourceTree = "<group>"; };
 		167879E529D9A1BB0064C8AE /* BeerViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeerViewModel.swift; sourceTree = "<group>"; };
@@ -127,14 +125,6 @@
 			path = Feature;
 			sourceTree = "<group>";
 		};
-		16502CFC2B3DBB9100831FCF /* BevUITests */ = {
-			isa = PBXGroup;
-			children = (
-				16502CFD2B3DBB9100831FCF /* BevUITests.swift */,
-			);
-			path = BevUITests;
-			sourceTree = "<group>";
-		};
 		167879E229D9A1890064C8AE /* Beer */ = {
 			isa = PBXGroup;
 			children = (
@@ -171,7 +161,6 @@
 				16502D062B3DBD5000831FCF /* BevTestPlan.xctestplan */,
 				169C6F9E29D8627300474092 /* Bev */,
 				169C6FAF29D8627500474092 /* BevTests */,
-				16502CFC2B3DBB9100831FCF /* BevUITests */,
 				167879EE29D9A4310064C8AE /* Sources */,
 				169C6F9D29D8627300474092 /* Products */,
 				1604B2C829D8848800097F7F /* Frameworks */,
@@ -359,7 +348,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				16502CFE2B3DBB9100831FCF /* BevUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -636,7 +624,6 @@
 		169C6FC429D8627500474092 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -665,7 +652,6 @@
 		169C6FC529D8627500474092 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;

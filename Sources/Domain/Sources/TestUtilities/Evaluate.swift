@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import XCTest
+import Testing
 
 public extension Optional {
     

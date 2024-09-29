@@ -10,10 +10,11 @@ import Domain
 import Networking
 import ObservationTestUtils
 import RepositoryMocks
-import XCTest
+import Testing
 @testable import Bev
+import Foundation
 
-final class BeerViewModelTests: XCTestCase {
+final class BeerViewModelTests {
     
     var sut: BeerViewModel!
     var mockBeerRepository: MockBeerRepository!
@@ -28,34 +29,32 @@ final class BeerViewModelTests: XCTestCase {
         }
     }
     
-    override func setUp() {
-        super.setUp()
+    init() {
         mockBeerRepository = MockBeerRepository()
     }
     
-    override func tearDown() {
+    deinit {
         sut = nil
         mockBeerRepository = nil
-        super.tearDown()
     }
     
     // MARK: - Combine -
     
-    func test_initialState_withCombine() {
+    @Test func initialState_withCombine() {
         sut = BeerViewModel(repository: mockBeerRepository, strategy: .combine)
         XCTAssertTrue(sut.beers.isEmpty)
         XCTAssertFalse(sut.showAlert)
         XCTAssertNil(sut.errorMessage)
     }
     
-    func test_loadBeers_callsLoadOnRepository_withCombine() async {
+    @Test func loadBeers_callsLoadOnRepository_withCombine() async {
         sut = BeerViewModel(repository: mockBeerRepository, strategy: .combine)
         mockBeerRepository.stubLoadBeersResponse = .success([])
         await sut.loadBeers()
         XCTAssertEqual(mockBeerRepository.loadBeersCallCount, 1)
     }
     
-    func test_refreshBeers_tellsRepositoryToLoad_withCombine() {
+    @Test func refreshBeers_tellsRepositoryToLoad_withCombine() {
         sut = BeerViewModel(repository: mockBeerRepository, strategy: .combine)
         mockBeerRepository.stubLoadBeersResponse = .success([])
         let exp = expectation(description: #function)
@@ -65,7 +64,7 @@ final class BeerViewModelTests: XCTestCase {
         XCTAssertEqual(mockBeerRepository.loadBeersCallCount, 1)
     }
     
-    func test_listenerSentBeersSuccessfully_setsBeers_withCombine() {
+    @Test func listenerSentBeersSuccessfully_setsBeers_withCombine() {
         sut = BeerViewModel(repository: mockBeerRepository, strategy: .combine)
         let sampleBeers = [Beer.sample()]
         mockBeerRepository.beersPublisher.send(.success(sampleBeers))
@@ -73,7 +72,7 @@ final class BeerViewModelTests: XCTestCase {
         XCTAssertEqual(sampleBeers, sut.beers)
     }
     
-    func test_listenerSentOfflineError_setsErrorMessageAndTogglesAlert_withCombine() {
+    @Test func listenerSentOfflineError_setsErrorMessageAndTogglesAlert_withCombine() {
         sut = BeerViewModel(repository: mockBeerRepository, strategy: .combine)
         let testError = BeerAPIError.offline
         mockBeerRepository.beersPublisher.send(.failure(testError))
@@ -82,7 +81,7 @@ final class BeerViewModelTests: XCTestCase {
         XCTAssertTrue(sut.showAlert)
     }
     
-    func test_listenerSentURLError_setsErrorMessageAndTogglesAlert_withCombine() {
+    @Test func listenerSentURLError_setsErrorMessageAndTogglesAlert_withCombine() {
         sut = BeerViewModel(repository: mockBeerRepository, strategy: .combine)
         let testError = BeerAPIError.couldNotConstructURL
         mockBeerRepository.beersPublisher.send(.failure(testError))
@@ -91,7 +90,7 @@ final class BeerViewModelTests: XCTestCase {
         XCTAssertTrue(sut.showAlert)
     }
     
-    func test_listenerSentError_setsErrorMessageAndTogglesAlert_withCombine() {
+    @Test func listenerSentError_setsErrorMessageAndTogglesAlert_withCombine() {
         sut = BeerViewModel(repository: mockBeerRepository, strategy: .combine)
         let testError = TestViewModelError.testError
         mockBeerRepository.beersPublisher.send(.failure(testError))
@@ -102,21 +101,21 @@ final class BeerViewModelTests: XCTestCase {
     
     // MARK: - AsyncSequence -
     
-    func test_initialState_withAsyncSequence() {
+    @Test func initialState_withAsyncSequence() {
         sut = BeerViewModel(repository: mockBeerRepository, strategy: .combine)
         XCTAssertTrue(sut.beers.isEmpty)
         XCTAssertFalse(sut.showAlert)
         XCTAssertNil(sut.errorMessage)
     }
     
-    func test_loadBeers_callsLoadOnRepository_withAsyncSequence() async {
+    @Test func loadBeers_callsLoadOnRepository_withAsyncSequence() async {
         sut = BeerViewModel(repository: mockBeerRepository, strategy: .asyncSequence)
         mockBeerRepository.stubLoadBeersResponse = .success([])
         await sut.loadBeers()
         XCTAssertEqual(mockBeerRepository.loadBeersCallCount, 1)
     }
     
-    func test_refreshBeers_tellsRepositoryToLoad_withAsyncSequence() {
+    @Test func refreshBeers_tellsRepositoryToLoad_withAsyncSequence() {
         sut = BeerViewModel(repository: mockBeerRepository, strategy: .asyncSequence)
         mockBeerRepository.stubLoadBeersResponse = .success([])
         let exp = expectation(description: #function)
@@ -126,7 +125,7 @@ final class BeerViewModelTests: XCTestCase {
         XCTAssertEqual(mockBeerRepository.loadBeersCallCount, 1)
     }
     
-    func test_listenerSentBeersSuccessfully_setsBeers_withAsyncSequence() {
+    @Test func listenerSentBeersSuccessfully_setsBeers_withAsyncSequence() {
         sut = BeerViewModel(repository: mockBeerRepository, strategy: .asyncSequence)
         let sampleBeers = [Beer.sample()]
         mockBeerRepository.beersPublisher.send(.success(sampleBeers))
@@ -134,7 +133,7 @@ final class BeerViewModelTests: XCTestCase {
         XCTAssertEqual(sampleBeers, sut.beers)
     }
     
-    func test_listenerSentOfflineError_setsErrorMessageAndTogglesAlert_withAsyncSequence() {
+    @Test func listenerSentOfflineError_setsErrorMessageAndTogglesAlert_withAsyncSequence() {
         sut = BeerViewModel(repository: mockBeerRepository, strategy: .asyncSequence)
         let testError = BeerAPIError.offline
         mockBeerRepository.beersPublisher.send(.failure(testError))
@@ -143,7 +142,7 @@ final class BeerViewModelTests: XCTestCase {
         XCTAssertTrue(sut.showAlert)
     }
     
-    func test_listenerSentURLError_setsErrorMessageAndTogglesAlert_withAsyncSequence() {
+    @Test func listenerSentURLError_setsErrorMessageAndTogglesAlert_withAsyncSequence() {
         sut = BeerViewModel(repository: mockBeerRepository, strategy: .asyncSequence)
         let testError = BeerAPIError.couldNotConstructURL
         mockBeerRepository.beersPublisher.send(.failure(testError))
@@ -152,7 +151,7 @@ final class BeerViewModelTests: XCTestCase {
         XCTAssertTrue(sut.showAlert)
     }
     
-    func test_listenerSentError_setsErrorMessageAndTogglesAlert_withAsyncSequence() {
+    @Test func listenerSentError_setsErrorMessageAndTogglesAlert_withAsyncSequence() {
         sut = BeerViewModel(repository: mockBeerRepository, strategy: .asyncSequence)
         let testError = TestViewModelError.testError
         mockBeerRepository.beersPublisher.send(.failure(testError))

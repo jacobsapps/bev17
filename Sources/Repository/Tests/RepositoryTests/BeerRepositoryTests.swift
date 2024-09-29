@@ -9,10 +9,10 @@ import Combine
 import Domain
 import NetworkingMocks
 import DatabaseMocks
-import XCTest
+import Testing
 @testable import Repository
 
-final class BeerRepositoryTests: XCTestCase {
+final class BeerRepositoryTests {
 
     var sut: BeerRepository!
     var mockBeerAPI: MockBeerAPI!
@@ -23,8 +23,7 @@ final class BeerRepositoryTests: XCTestCase {
         case testError
     }
     
-    override func setUp() {
-        super.setUp()
+    init() {
         mockBeerAPI = MockBeerAPI()
         mockBeerDB = MockBeerDB()
         sut = BeerRepositoryImpl(api: mockBeerAPI, db: mockBeerDB)
@@ -43,7 +42,7 @@ final class BeerRepositoryTests: XCTestCase {
 
     // MARK: - DataAccessStrategy.upToDateWithFallback
     
-    func test_loadBeers_upToDateWithFallback_callsAPI() async {
+    @Test func loadBeers_upToDateWithFallback_callsAPI() async {
         mockBeerAPI.stubGetAllBeersResponse = .success([])
         mockBeerDB.stubSaveBeersResponse = .success(())
         await sut.loadBeers(strategy: .upToDateWithFallback)
@@ -51,7 +50,7 @@ final class BeerRepositoryTests: XCTestCase {
         XCTAssertEqual(mockBeerDB.saveBeersCallCount, 1)
     }
     
-    func test_loadBeers_success_sendsBeersToPublisher() async {
+    @Test func loadBeers_success_sendsBeersToPublisher() async {
 
         let expectedBeers = [Beer.sample()]
         mockBeerAPI.stubGetAllBeersResponse = .success(expectedBeers)
@@ -65,7 +64,7 @@ final class BeerRepositoryTests: XCTestCase {
         }
     }
     
-    func test_loadBeers_failure_sendsErrorToPublisher() async {
+    @Test func loadBeers_failure_sendsErrorToPublisher() async {
 
         let testError = TestRepositoryError.testError
         mockBeerAPI.stubGetAllBeersResponse = .failure(testError)

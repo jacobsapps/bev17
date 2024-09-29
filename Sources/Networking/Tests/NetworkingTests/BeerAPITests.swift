@@ -6,11 +6,11 @@
 //
 
 import Domain
-import XCTest
+import Testing
 import NetworkingMocks
 @testable import Networking
 
-final class BeerAPITests: XCTestCase {
+final class BeerAPITests {
     
     private var sut: BeerAPI!
     private var mockURLSession: MockURLSession!
@@ -19,8 +19,7 @@ final class BeerAPITests: XCTestCase {
         case testError
     }
     
-    override func setUp() {
-        super.setUp()
+    init() {
         mockURLSession = MockURLSession()
         sut = BeerAPIImpl(session: mockURLSession)
     }
@@ -31,7 +30,7 @@ final class BeerAPITests: XCTestCase {
         super.tearDown()
     }
     
-    func test_getBeers_createsCorrectURL() async {
+    @Test func getBeers_createsCorrectURL() async {
         mockURLSession.stubDataResponse = .success((Data(), URLResponse()))
         _ = try? await sut.getBeers()
         XCTAssertEqual(mockURLSession.capturedURL?.host, "api.punkapi.com")
@@ -39,7 +38,7 @@ final class BeerAPITests: XCTestCase {
         XCTAssertEqual(mockURLSession.capturedURL?.query(percentEncoded: false), "page=1&per_page=50")    
     }
     
-    func test_getBeers_returnsBeer() async {
+    @Test func getBeers_returnsBeer() async {
         let expectedBeer = [Beer.sample()]
         let beerData = try? JSONEncoder().encode(expectedBeer)
         mockURLSession.stubDataResponse = .success((beerData ?? Data(), URLResponse()))
@@ -47,7 +46,7 @@ final class BeerAPITests: XCTestCase {
         XCTAssertEqual(resultBeer, expectedBeer)
     }
     
-    func test_getBeers_returnsEmptyArray() async {
+    @Test func getBeers_returnsEmptyArray() async {
         let expectedEmptyArray = [Beer]()
         let emptyData = try? JSONEncoder().encode(expectedEmptyArray)
         mockURLSession.stubDataResponse = .success((emptyData ?? Data(), URLResponse()))
@@ -55,7 +54,7 @@ final class BeerAPITests: XCTestCase {
         XCTAssertEqual(resultBeer, expectedEmptyArray)
     }
 
-    func test_getBeers_invalidURL_throwsCouldNotConstructURLError() async {
+    @Test func getBeers_invalidURL_throwsCouldNotConstructURLError() async {
         sut = BeerAPIImpl(baseURL: "<>^`{|}", session: mockURLSession)
         do {
             _ = try await sut.getBeers()
@@ -66,7 +65,7 @@ final class BeerAPITests: XCTestCase {
         }
     }
     
-    func test_getBeers_offline_throwsError() async {
+    @Test func getBeers_offline_throwsError() async {
         let testError = NSError(domain: NSURLErrorDomain, code: NSURLErrorNotConnectedToInternet)
         mockURLSession.stubDataResponse = .failure(testError)
         do {
@@ -78,7 +77,7 @@ final class BeerAPITests: XCTestCase {
         }
     }
     
-    func test_getBeers_requestFailure_throwsError() async {
+    @Test func getBeers_requestFailure_throwsError() async {
         let testError = TestError.testError
         mockURLSession.stubDataResponse = .failure(testError)
         do {
@@ -90,7 +89,7 @@ final class BeerAPITests: XCTestCase {
         }
     }
     
-    func test_getBeers_invalidJSON_throwsDecodingError() async {
+    @Test func getBeers_invalidJSON_throwsDecodingError() async {
         let invalidJSONData = "invalid_json".data(using: .utf8)!
         mockURLSession.stubDataResponse = .success((invalidJSONData, URLResponse()))
         do {
@@ -102,7 +101,7 @@ final class BeerAPITests: XCTestCase {
         }
     }
 
-    func test_getBeers_emptyData_throwsDecodingError() async {
+    @Test func getBeers_emptyData_throwsDecodingError() async {
         let emptyData = Data()
         mockURLSession.stubDataResponse = .success((emptyData, URLResponse()))
         do {

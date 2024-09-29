@@ -5,14 +5,14 @@
 //  Created by Jacob Bartlett on 02/04/2023.
 //
 
-import XCTest
+import Testing
 @testable import Domain
 
-final class BeerTests: XCTestCase {
+final class BeerTests {
     
     let decoder = JSONDecoder()
     
-    func test_decodeJSON_parsesKeyInformation() {
+    @Test func decodeJSON_parsesKeyInformation() {
         
         guard let jsonData = getBeerJSON().data(using: .utf8),
               let beer = try? decoder.decode([Beer].self, from: jsonData).first else {
@@ -26,7 +26,7 @@ final class BeerTests: XCTestCase {
         XCTAssertEqual(beer.abv, 4.5)
     }
     
-    func test_decodeJSON_parsesSupplementaryInformation() {
+    @Test func decodeJSON_parsesSupplementaryInformation() {
         
         guard let jsonData = getBeerJSON().data(using: .utf8),
               let beer = try? decoder.decode([Beer].self, from: jsonData).first else {
@@ -39,7 +39,7 @@ final class BeerTests: XCTestCase {
         XCTAssertNotNil(beer.ingredients.yeast)
     }
     
-    func test_decodeJSON_parsesSnakeCaseCodingKeys() {
+    @Test func decodeJSON_parsesSnakeCaseCodingKeys() {
         
         guard let jsonData = getBeerJSON().data(using: .utf8),
               let beer = try? decoder.decode([Beer].self, from: jsonData).first else {
@@ -56,7 +56,7 @@ final class BeerTests: XCTestCase {
         ])
     }
     
-    func test_decodeJSON_withInvalidDataFormat_throwsError() {
+    @Test func decodeJSON_withInvalidDataFormat_throwsError() {
         
         do {
             let invalidData = "[{\"fake-data\"}]".data(using: .utf8)
@@ -69,7 +69,7 @@ final class BeerTests: XCTestCase {
         }
     }
     
-    func test_equality_checksForMatchingID() {
+    @Test func equality_checksForMatchingID() {
         let beerA = createBeer(id: 0, name: "Beer A")
         let beerB = createBeer(id: 1, name: "Beer B")
         let beerC = createBeer(id: 1, name: "Beer C")
@@ -79,14 +79,14 @@ final class BeerTests: XCTestCase {
         XCTAssertTrue(beerB == beerC)
     }
     
-    func test_optionalValues() {
+    @Test func optionalValues() {
         let beer = createBeer(id: 0, name: "Beer A", imageURL: nil, yeast: nil)
 
         XCTAssertNil(beer.imageURL)
         XCTAssertNil(beer.ingredients.yeast)
     }
 
-    func test_sample_createsSampleBeer() {
+    @Test func sample_createsSampleBeer() {
         let beer = Beer.sample()
         
         XCTAssertEqual(beer.id, 999)
