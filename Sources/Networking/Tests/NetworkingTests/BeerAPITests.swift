@@ -33,9 +33,9 @@ final class BeerAPITests {
     @Test func getBeers_createsCorrectURL() async {
         mockURLSession.stubDataResponse = .success((Data(), URLResponse()))
         _ = try? await sut.getBeers()
-        XCTAssertEqual(mockURLSession.capturedURL?.host, "api.punkapi.com")
-        XCTAssertEqual(mockURLSession.capturedURL?.path, "/v2/beers")
-        XCTAssertEqual(mockURLSession.capturedURL?.query(percentEncoded: false), "page=1&per_page=50")    
+        #expect(mockURLSession.capturedURL?.host == "api.punkapi.com")
+        #expect(mockURLSession.capturedURL?.path == "/v2/beers")
+        #expect(mockURLSession.capturedURL?.query(percentEncoded: false) == "page=1&per_page=50")    
     }
     
     @Test func getBeers_returnsBeer() async {
@@ -43,7 +43,7 @@ final class BeerAPITests {
         let beerData = try? JSONEncoder().encode(expectedBeer)
         mockURLSession.stubDataResponse = .success((beerData ?? Data(), URLResponse()))
         let resultBeer = try? await sut.getBeers()
-        XCTAssertEqual(resultBeer, expectedBeer)
+        #expect(resultBeer == expectedBeer)
     }
     
     @Test func getBeers_returnsEmptyArray() async {
@@ -51,7 +51,7 @@ final class BeerAPITests {
         let emptyData = try? JSONEncoder().encode(expectedEmptyArray)
         mockURLSession.stubDataResponse = .success((emptyData ?? Data(), URLResponse()))
         let resultBeer = try? await sut.getBeers()
-        XCTAssertEqual(resultBeer, expectedEmptyArray)
+        #expect(resultBeer == expectedEmptyArray)
     }
 
     @Test func getBeers_invalidURL_throwsCouldNotConstructURLError() async {
@@ -61,7 +61,7 @@ final class BeerAPITests {
             XCTFail("Expected to fail")
             
         } catch {
-            XCTAssertEqual(error as? BeerAPIError, .couldNotConstructURL)
+            #expect(error as? BeerAPIError == .couldNotConstructURL)
         }
     }
     
@@ -73,7 +73,7 @@ final class BeerAPITests {
             XCTFail("Expected to fail")
             
         } catch {
-            XCTAssertEqual(error as? BeerAPIError, .offline)
+            #expect(error as? BeerAPIError == .offline)
         }
     }
     
@@ -85,7 +85,7 @@ final class BeerAPITests {
             XCTFail("Expected to fail")
             
         } catch {
-            XCTAssertEqual(error as? TestError, testError)
+            #expect(error as? TestError == testError)
         }
     }
     
@@ -97,7 +97,7 @@ final class BeerAPITests {
             XCTFail("Expected to fail")
             
         } catch {
-            XCTAssertTrue(error is DecodingError)
+            #expect(error is DecodingError)
         }
     }
 
@@ -109,7 +109,7 @@ final class BeerAPITests {
             XCTFail("Expected to fail")
             
         } catch {
-            XCTAssertTrue(error is DecodingError)
+            #expect(error is DecodingError)
         }
     }
 }

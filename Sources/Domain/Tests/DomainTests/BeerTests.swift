@@ -20,10 +20,10 @@ final class BeerTests {
             return
         }
         
-        XCTAssertEqual(beer.id, 1)
-        XCTAssertEqual(beer.name, "Buzz")
-        XCTAssertEqual(beer.tagline, "A Real Bitter Experience.")
-        XCTAssertEqual(beer.abv, 4.5)
+        #expect(beer.id == 1)
+        #expect(beer.name == "Buzz")
+        #expect(beer.tagline == "A Real Bitter Experience.")
+        #expect(beer.abv == 4.5)
     }
     
     @Test func decodeJSON_parsesSupplementaryInformation() {
@@ -34,8 +34,8 @@ final class BeerTests {
             return
         }
         
-        XCTAssertFalse(beer.ingredients.malt.isEmpty)
-        XCTAssertFalse(beer.ingredients.hops.isEmpty)
+        #expect(!beer.ingredients.malt.isEmpty)
+        #expect(!beer.ingredients.hops.isEmpty)
         XCTAssertNotNil(beer.ingredients.yeast)
     }
     
@@ -47,9 +47,9 @@ final class BeerTests {
             return
         }
         
-        XCTAssertEqual(beer.firstBrewed, "09/2007")
-        XCTAssertEqual(beer.imageURL, "https://images.punkapi.com/v2/keg.png")
-        XCTAssertEqual(beer.foodPairing, [
+        #expect(beer.firstBrewed == "09/2007")
+        #expect(beer.imageURL == "https://images.punkapi.com/v2/keg.png")
+        #expect(beer.foodPairing == [
             "Spicy chicken tikka masala",
             "Grilled chicken quesadilla",
             "Caramel toffee cake"
@@ -74,25 +74,25 @@ final class BeerTests {
         let beerB = createBeer(id: 1, name: "Beer B")
         let beerC = createBeer(id: 1, name: "Beer C")
         
-        XCTAssertTrue(beerA != beerB)
-        XCTAssertTrue(beerA != beerC)
-        XCTAssertTrue(beerB == beerC)
+        #expect(beerA != beerB)
+        #expect(beerA != beerC)
+        #expect(beerB == beerC)
     }
     
     @Test func optionalValues() {
         let beer = createBeer(id: 0, name: "Beer A", imageURL: nil, yeast: nil)
 
-        XCTAssertNil(beer.imageURL)
-        XCTAssertNil(beer.ingredients.yeast)
+        #expect(beer.imageURL == nil)
+        #expect(beer.ingredients.yeast == nil)
     }
 
     @Test func sample_createsSampleBeer() {
         let beer = Beer.sample()
         
-        XCTAssertEqual(beer.id, 999)
-        XCTAssertEqual(beer.name, "Beer")
-        XCTAssertEqual(beer.tagline, "A nice beer")
-        XCTAssertEqual(beer.abv, 5.5)
+        #expect(beer.id == 999)
+        #expect(beer.name == "Beer")
+        #expect(beer.tagline == "A nice beer")
+        #expect(beer.abv == 5.5)
     }
     
     private func createBeer(id: Int, name: String, imageURL: String? = "", yeast: String? = "") -> Beer {

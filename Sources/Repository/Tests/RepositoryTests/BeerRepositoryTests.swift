@@ -46,8 +46,8 @@ final class BeerRepositoryTests {
         mockBeerAPI.stubGetAllBeersResponse = .success([])
         mockBeerDB.stubSaveBeersResponse = .success(())
         await sut.loadBeers(strategy: .upToDateWithFallback)
-        XCTAssertEqual(mockBeerAPI.getAllBeersCallCount, 1)
-        XCTAssertEqual(mockBeerDB.saveBeersCallCount, 1)
+        #expect(mockBeerAPI.getAllBeersCallCount == 1)
+        #expect(mockBeerDB.saveBeersCallCount == 1)
     }
     
     @Test func loadBeers_success_sendsBeersToPublisher() async {
@@ -57,7 +57,7 @@ final class BeerRepositoryTests {
         mockBeerDB.stubSaveBeersResponse = .success(())
 
         if case .success(let beers) = await getLoadBeersTestResult(strategy: .upToDateWithFallback) {
-            XCTAssertEqual(beers, expectedBeers)
+            #expect(beers == expectedBeers)
 
         } else {
             XCTFail(#function)
@@ -71,7 +71,7 @@ final class BeerRepositoryTests {
         mockBeerDB.stubGetBeersResponse = .failure(testError)
 
         if case .failure(let error) = await getLoadBeersTestResult(strategy: .upToDateWithFallback) {
-            XCTAssertEqual(error as? TestRepositoryError, testError)
+            #expect(error as? TestRepositoryError == testError)
 
         } else {
             XCTFail(#function)
