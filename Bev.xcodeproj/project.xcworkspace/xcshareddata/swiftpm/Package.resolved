@@ -1,15 +1,6 @@
 {
   "pins" : [
     {
-      "identity" : "observationtestutils",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/jacobsapps/ObservationTestUtils",
-      "state" : {
-        "branch" : "main",
-        "revision" : "e6452c20c6d36056aa07fb8402262edcf08d75db"
-      }
-    },
-    {
       "identity" : "swiftui-cached-async-image",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/lorenzofiamingo/swiftui-cached-async-image",

@@ -10,6 +10,7 @@ import Domain
 import NetworkingMocks
 import DatabaseMocks
 import Testing
+import TestUtilities
 @testable import Repository
 
 final class BeerRepositoryTests {
@@ -29,13 +30,12 @@ final class BeerRepositoryTests {
         sut = BeerRepositoryImpl(api: mockBeerAPI, db: mockBeerDB)
     }
     
-    override func tearDown() {
+    deinit {
         cancel?.cancel()
         cancel = nil
         sut = nil
         mockBeerAPI = nil
         mockBeerDB = nil
-        super.tearDown()
     }
     
     // MARK: - DataAccessStrategy.fastestAvailable
@@ -50,31 +50,31 @@ final class BeerRepositoryTests {
         #expect(mockBeerDB.saveBeersCallCount == 1)
     }
     
-    @Test func loadBeers_success_sendsBeersToPublisher() async {
+    @Test func loadBeers_success_sendsBeersToPublisher() async throws {
 
         let expectedBeers = [Beer.sample()]
         mockBeerAPI.stubGetAllBeersResponse = .success(expectedBeers)
         mockBeerDB.stubSaveBeersResponse = .success(())
 
-        if case .success(let beers) = await getLoadBeersTestResult(strategy: .upToDateWithFallback) {
+        if case .success(let beers) = try await getLoadBeersTestResult(strategy: .upToDateWithFallback) {
             #expect(beers == expectedBeers)
 
         } else {
-            XCTFail(#function)
+            #expect(Bool(false))
         }
     }
     
-    @Test func loadBeers_failure_sendsErrorToPublisher() async {
+    @Test func loadBeers_failure_sendsErrorToPublisher() async throws {
 
         let testError = TestRepositoryError.testError
         mockBeerAPI.stubGetAllBeersResponse = .failure(testError)
         mockBeerDB.stubGetBeersResponse = .failure(testError)
 
-        if case .failure(let error) = await getLoadBeersTestResult(strategy: .upToDateWithFallback) {
+        if case .failure(let error) = try await getLoadBeersTestResult(strategy: .upToDateWithFallback) {
             #expect(error as? TestRepositoryError == testError)
 
         } else {
-            XCTFail(#function)
+            #expect(Bool(false))
         }
     }
     
@@ -82,10 +82,10 @@ final class BeerRepositoryTests {
     
     // MARK: - Helpers -
     
-    private func getLoadBeersTestResult(strategy: DataAccessStrategy) async -> LoadingState<[Beer]>? {
+    private func getLoadBeersTestResult(strategy: DataAccessStrategy) async throws -> LoadingState<[Beer]>? {
         var testResult: LoadingState<[Beer]>?
         
-        let exp = expectation(description: #function)
+        let exp = SwiftExpectation()
         cancel = sut.beersPublisher
             .dropFirst(2)
             .sink(receiveValue: {
@@ -94,7 +94,7 @@ final class BeerRepositoryTests {
             })
         
         await sut.loadBeers(strategy: strategy)
-        await fulfillment(of: [exp], timeout: 1)
+        try await exp.wait()
         
         return testResult
     }

@@ -6,46 +6,33 @@
 //
 
 import Testing
+import Foundation
 @testable import Domain
 
 final class BeerTests {
     
     let decoder = JSONDecoder()
     
-    @Test func decodeJSON_parsesKeyInformation() {
-        
-        guard let jsonData = getBeerJSON().data(using: .utf8),
-              let beer = try? decoder.decode([Beer].self, from: jsonData).first else {
-            XCTFail("Failed to decode test data")
-            return
-        }
-        
+    @Test func decodeJSON_parsesKeyInformation() throws {
+        let jsonData = try #require(getBeerJSON().data(using: .utf8))
+        let beer = try #require(try decoder.decode([Beer].self, from: jsonData).first)
         #expect(beer.id == 1)
         #expect(beer.name == "Buzz")
         #expect(beer.tagline == "A Real Bitter Experience.")
         #expect(beer.abv == 4.5)
     }
     
-    @Test func decodeJSON_parsesSupplementaryInformation() {
-        
-        guard let jsonData = getBeerJSON().data(using: .utf8),
-              let beer = try? decoder.decode([Beer].self, from: jsonData).first else {
-            XCTFail("Failed to decode test data")
-            return
-        }
-        
+    @Test func decodeJSON_parsesSupplementaryInformation() throws {
+        let jsonData = try #require(getBeerJSON().data(using: .utf8))
+        let beer = try #require(try decoder.decode([Beer].self, from: jsonData).first)
         #expect(!beer.ingredients.malt.isEmpty)
         #expect(!beer.ingredients.hops.isEmpty)
-        XCTAssertNotNil(beer.ingredients.yeast)
+        #expect(beer.ingredients.yeast != nil)
     }
     
-    @Test func decodeJSON_parsesSnakeCaseCodingKeys() {
-        
-        guard let jsonData = getBeerJSON().data(using: .utf8),
-              let beer = try? decoder.decode([Beer].self, from: jsonData).first else {
-            XCTFail("Failed to decode test data")
-            return
-        }
+    @Test func decodeJSON_parsesSnakeCaseCodingKeys() throws {
+        let jsonData = try #require(getBeerJSON().data(using: .utf8))
+        let beer = try #require(try decoder.decode([Beer].self, from: jsonData).first)
         
         #expect(beer.firstBrewed == "09/2007")
         #expect(beer.imageURL == "https://images.punkapi.com/v2/keg.png")
@@ -56,16 +43,15 @@ final class BeerTests {
         ])
     }
     
-    @Test func decodeJSON_withInvalidDataFormat_throwsError() {
+    @Test func decodeJSON_withInvalidDataFormat_throwsError() throws {
         
         do {
             let invalidData = "[{\"fake-data\"}]".data(using: .utf8)
             _ = try decoder.decode([Beer].self, from: invalidData!)
-            XCTFail("Expected to fail")
+            try #require(Bool(false))
             
         } catch {
-            XCTAssertEqual(error.localizedDescription,
-                           "The data couldn’t be read because it isn’t in the correct format.")
+            #expect(error.localizedDescription == "The data couldn’t be read because it isn’t in the correct format.")
         }
     }
     
@@ -81,11 +67,11 @@ final class BeerTests {
     
     @Test func optionalValues() {
         let beer = createBeer(id: 0, name: "Beer A", imageURL: nil, yeast: nil)
-
+        
         #expect(beer.imageURL == nil)
         #expect(beer.ingredients.yeast == nil)
     }
-
+    
     @Test func sample_createsSampleBeer() {
         let beer = Beer.sample()
         

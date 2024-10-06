@@ -8,9 +8,9 @@
 import Combine
 import Domain
 import Networking
-import ObservationTestUtils
 import RepositoryMocks
 import Testing
+import TestUtilities
 @testable import Bev
 import Foundation
 
@@ -54,47 +54,47 @@ final class BeerViewModelTests {
         #expect(mockBeerRepository.loadBeersCallCount == 1)
     }
     
-    @Test func refreshBeers_tellsRepositoryToLoad_withCombine() {
+    @Test func refreshBeers_tellsRepositoryToLoad_withCombine() async throws {
         sut = BeerViewModel(repository: mockBeerRepository, strategy: .combine)
         mockBeerRepository.stubLoadBeersResponse = .success([])
-        let exp = expectation(description: #function)
+        let exp = SwiftExpectation(timeout: 1)
         mockBeerRepository.didLoadBeers = { exp.fulfill() }
         sut.refreshBeers()
-        waitForExpectations(timeout: 1)
+        try await exp.wait()
         #expect(mockBeerRepository.loadBeersCallCount == 1)
     }
     
-    @Test func listenerSentBeersSuccessfully_setsBeers_withCombine() {
+    @Test func listenerSentBeersSuccessfully_setsBeers_withCombine() async throws {
         sut = BeerViewModel(repository: mockBeerRepository, strategy: .combine)
         let sampleBeers = [Beer.sample()]
         mockBeerRepository.beersPublisher.send(.success(sampleBeers))
-        waitForChanges(to: \.beers, on: sut)
+        try await changes(to: \.beers, on: sut)
         #expect(sampleBeers == sut.beers)
     }
     
-    @Test func listenerSentOfflineError_setsErrorMessageAndTogglesAlert_withCombine() {
+    @Test func listenerSentOfflineError_setsErrorMessageAndTogglesAlert_withCombine() async throws {
         sut = BeerViewModel(repository: mockBeerRepository, strategy: .combine)
         let testError = BeerAPIError.offline
         mockBeerRepository.beersPublisher.send(.failure(testError))
-        waitForChanges(to: \BeerViewModel.showAlert, on: sut)
+        try await changes(to: \BeerViewModel.showAlert, on: sut)
         #expect(sut.errorMessage == BeerAPIError.offline.errorDescription)
         #expect(sut.showAlert)
     }
     
-    @Test func listenerSentURLError_setsErrorMessageAndTogglesAlert_withCombine() {
+    @Test func listenerSentURLError_setsErrorMessageAndTogglesAlert_withCombine() async throws {
         sut = BeerViewModel(repository: mockBeerRepository, strategy: .combine)
         let testError = BeerAPIError.couldNotConstructURL
         mockBeerRepository.beersPublisher.send(.failure(testError))
-        waitForChanges(to: \.showAlert, on: sut)
+        try await changes(to: \BeerViewModel.showAlert, on: sut)
         #expect(sut.errorMessage == BeerAPIError.couldNotConstructURL.errorDescription)
         #expect(sut.showAlert)
     }
     
-    @Test func listenerSentError_setsErrorMessageAndTogglesAlert_withCombine() {
+    @Test func listenerSentError_setsErrorMessageAndTogglesAlert_withCombine() async throws {
         sut = BeerViewModel(repository: mockBeerRepository, strategy: .combine)
         let testError = TestViewModelError.testError
         mockBeerRepository.beersPublisher.send(.failure(testError))
-        waitForChanges(to: \.showAlert, on: sut)
+        try await changes(to: \BeerViewModel.showAlert, on: sut)
         #expect(sut.errorMessage == testError.localizedDescription)
         #expect(sut.showAlert)
     }
@@ -115,47 +115,47 @@ final class BeerViewModelTests {
         #expect(mockBeerRepository.loadBeersCallCount == 1)
     }
     
-    @Test func refreshBeers_tellsRepositoryToLoad_withAsyncSequence() {
+    @Test func refreshBeers_tellsRepositoryToLoad_withAsyncSequence() async throws {
         sut = BeerViewModel(repository: mockBeerRepository, strategy: .asyncSequence)
         mockBeerRepository.stubLoadBeersResponse = .success([])
-        let exp = expectation(description: #function)
+        let exp = SwiftExpectation()
         mockBeerRepository.didLoadBeers = { exp.fulfill() }
         sut.refreshBeers()
-        waitForExpectations(timeout: 1)
+        try await exp.wait()
         #expect(mockBeerRepository.loadBeersCallCount == 1)
     }
-    
-    @Test func listenerSentBeersSuccessfully_setsBeers_withAsyncSequence() {
+        
+    @Test func listenerSentBeersSuccessfully_setsBeers_withAsyncSequence() async throws {
         sut = BeerViewModel(repository: mockBeerRepository, strategy: .asyncSequence)
         let sampleBeers = [Beer.sample()]
         mockBeerRepository.beersPublisher.send(.success(sampleBeers))
-        waitForChanges(to: \.beers, on: sut)
+        try await changes(to: \.beers, on: sut)
         #expect(sampleBeers == sut.beers)
     }
     
-    @Test func listenerSentOfflineError_setsErrorMessageAndTogglesAlert_withAsyncSequence() {
+    @Test func listenerSentOfflineError_setsErrorMessageAndTogglesAlert_withAsyncSequence() async throws {
         sut = BeerViewModel(repository: mockBeerRepository, strategy: .asyncSequence)
         let testError = BeerAPIError.offline
         mockBeerRepository.beersPublisher.send(.failure(testError))
-        waitForChanges(to: \.showAlert, on: sut)
+        try await changes(to: \BeerViewModel.showAlert, on: sut)
         #expect(sut.errorMessage == BeerAPIError.offline.errorDescription)
         #expect(sut.showAlert)
     }
     
-    @Test func listenerSentURLError_setsErrorMessageAndTogglesAlert_withAsyncSequence() {
+    @Test func listenerSentURLError_setsErrorMessageAndTogglesAlert_withAsyncSequence() async throws {
         sut = BeerViewModel(repository: mockBeerRepository, strategy: .asyncSequence)
         let testError = BeerAPIError.couldNotConstructURL
         mockBeerRepository.beersPublisher.send(.failure(testError))
-        waitForChanges(to: \.showAlert, on: sut)
+        try await changes(to: \BeerViewModel.showAlert, on: sut)
         #expect(sut.errorMessage == BeerAPIError.couldNotConstructURL.errorDescription)
         #expect(sut.showAlert)
     }
     
-    @Test func listenerSentError_setsErrorMessageAndTogglesAlert_withAsyncSequence() {
+    @Test func listenerSentError_setsErrorMessageAndTogglesAlert_withAsyncSequence() async throws {
         sut = BeerViewModel(repository: mockBeerRepository, strategy: .asyncSequence)
         let testError = TestViewModelError.testError
         mockBeerRepository.beersPublisher.send(.failure(testError))
-        waitForChanges(to: \.showAlert, on: sut)
+        try await changes(to: \BeerViewModel.showAlert, on: sut)
         #expect(sut.errorMessage == testError.localizedDescription)
         #expect(sut.showAlert)
     }

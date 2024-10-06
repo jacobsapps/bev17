@@ -20,7 +20,6 @@
 		169E7E3F2AD9DAA20020727B /* CachedAsyncImage in Frameworks */ = {isa = PBXBuildFile; productRef = 169E7E3E2AD9DAA20020727B /* CachedAsyncImage */; };
 		169E7E412AD9E5630020727B /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 169E7E402AD9E5630020727B /* Launch Screen.storyboard */; };
 		169E7E442AD9ECE20020727B /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169E7E432AD9ECE20020727B /* View+Extensions.swift */; };
-		16CA22B02ACF611300D68143 /* ObservationTestUtils in Frameworks */ = {isa = PBXBuildFile; productRef = 16CA22AF2ACF611300D68143 /* ObservationTestUtils */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,7 +83,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				1690EA6D29DAB5A60025BD8C /* RepositoryMocks in Frameworks */,
-				16CA22B02ACF611300D68143 /* ObservationTestUtils in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,7 +260,6 @@
 			name = BevTests;
 			packageProductDependencies = (
 				1690EA6C29DAB5A60025BD8C /* RepositoryMocks */,
-				16CA22AF2ACF611300D68143 /* ObservationTestUtils */,
 			);
 			productName = BevTests;
 			productReference = 169C6FAC29D8627500474092 /* BevTests.xctest */;
@@ -302,7 +299,6 @@
 			);
 			mainGroup = 169C6F9329D8627300474092;
 			packageReferences = (
-				16CA22AE2ACF611300D68143 /* XCRemoteSwiftPackageReference "ObservationTestUtils" */,
 				169E7E3D2AD9DAA10020727B /* XCRemoteSwiftPackageReference "swiftui-cached-async-image" */,
 			);
 			productRefGroup = 169C6F9D29D8627300474092 /* Products */;
@@ -726,14 +722,6 @@
 				minimumVersion = 2.1.1;
 			};
 		};
-		16CA22AE2ACF611300D68143 /* XCRemoteSwiftPackageReference "ObservationTestUtils" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/jacobsapps/ObservationTestUtils";
-			requirement = {
-				branch = main;
-				kind = branch;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -749,11 +737,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 169E7E3D2AD9DAA10020727B /* XCRemoteSwiftPackageReference "swiftui-cached-async-image" */;
 			productName = CachedAsyncImage;
-		};
-		16CA22AF2ACF611300D68143 /* ObservationTestUtils */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 16CA22AE2ACF611300D68143 /* XCRemoteSwiftPackageReference "ObservationTestUtils" */;
-			productName = ObservationTestUtils;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

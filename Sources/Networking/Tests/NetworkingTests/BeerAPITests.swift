@@ -5,6 +5,7 @@
 //  Created by Jacob Bartlett on 02/04/2023.
 //
 
+import Foundation
 import Domain
 import Testing
 import NetworkingMocks
@@ -24,10 +25,9 @@ final class BeerAPITests {
         sut = BeerAPIImpl(session: mockURLSession)
     }
     
-    override func tearDown() {
+    deinit {
         sut = nil
         mockURLSession = nil
-        super.tearDown()
     }
     
     @Test func getBeers_createsCorrectURL() async {
@@ -58,7 +58,7 @@ final class BeerAPITests {
         sut = BeerAPIImpl(baseURL: "<>^`{|}", session: mockURLSession)
         do {
             _ = try await sut.getBeers()
-            XCTFail("Expected to fail")
+            try #require(Bool(false))
             
         } catch {
             #expect(error as? BeerAPIError == .couldNotConstructURL)
@@ -70,7 +70,7 @@ final class BeerAPITests {
         mockURLSession.stubDataResponse = .failure(testError)
         do {
             _ = try await sut.getBeers()
-            XCTFail("Expected to fail")
+            try #require(Bool(false))
             
         } catch {
             #expect(error as? BeerAPIError == .offline)
@@ -82,7 +82,7 @@ final class BeerAPITests {
         mockURLSession.stubDataResponse = .failure(testError)
         do {
             _ = try await sut.getBeers()
-            XCTFail("Expected to fail")
+            try #require(Bool(false))
             
         } catch {
             #expect(error as? TestError == testError)
@@ -94,7 +94,7 @@ final class BeerAPITests {
         mockURLSession.stubDataResponse = .success((invalidJSONData, URLResponse()))
         do {
             _ = try await sut.getBeers()
-            XCTFail("Expected to fail")
+            try #require(Bool(false))
             
         } catch {
             #expect(error is DecodingError)
@@ -106,7 +106,7 @@ final class BeerAPITests {
         mockURLSession.stubDataResponse = .success((emptyData, URLResponse()))
         do {
             _ = try await sut.getBeers()
-            XCTFail("Expected to fail")
+            try #require(Bool(false))
             
         } catch {
             #expect(error is DecodingError)
