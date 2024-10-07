@@ -22,7 +22,7 @@ public extension Optional {
         file: StaticString = #file,
         line: UInt = #line
     ) throws -> T where Wrapped == Result<T, Error> {
-        try #require(self != nil)
-        return try self!.get()
+        let this = try #require(self)
+        return try this.get()
     }
 }
