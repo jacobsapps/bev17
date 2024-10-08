@@ -44,7 +44,6 @@ final class BeerTests {
     }
     
     @Test func decodeJSON_withInvalidDataFormat_throwsError() throws {
-        
         do {
             let invalidData = "[{\"fake-data\"}]".data(using: .utf8)
             _ = try decoder.decode([Beer].self, from: invalidData!)

@@ -56,60 +56,45 @@ final class BeerAPITests {
 
     @Test func getBeers_invalidURL_throwsCouldNotConstructURLError() async {
         sut = BeerAPIImpl(baseURL: "<>^`{|}", session: mockURLSession)
-        do {
-            _ = try await sut.getBeers()
-            try #require(Bool(false))
-            
-        } catch {
-            #expect(error as? BeerAPIError == .couldNotConstructURL)
-        }
+        await #expect(throws: BeerAPIError.couldNotConstructURL,
+                      performing: {
+            try await sut.getBeers()
+        })
     }
     
     @Test func getBeers_offline_throwsError() async {
         let testError = NSError(domain: NSURLErrorDomain, code: NSURLErrorNotConnectedToInternet)
         mockURLSession.stubDataResponse = .failure(testError)
-        do {
-            _ = try await sut.getBeers()
-            try #require(Bool(false))
-            
-        } catch {
-            #expect(error as? BeerAPIError == .offline)
-        }
+        await #expect(throws: BeerAPIError.offline,
+                      performing: {
+            try await sut.getBeers()
+        })
     }
     
     @Test func getBeers_requestFailure_throwsError() async {
         let testError = TestError.testError
         mockURLSession.stubDataResponse = .failure(testError)
-        do {
-            _ = try await sut.getBeers()
-            try #require(Bool(false))
-            
-        } catch {
-            #expect(error as? TestError == testError)
-        }
+        await #expect(throws: TestError.testError,
+                      performing: {
+            try await sut.getBeers()
+        })
     }
     
     @Test func getBeers_invalidJSON_throwsDecodingError() async {
         let invalidJSONData = "invalid_json".data(using: .utf8)!
         mockURLSession.stubDataResponse = .success((invalidJSONData, URLResponse()))
-        do {
-            _ = try await sut.getBeers()
-            try #require(Bool(false))
-            
-        } catch {
-            #expect(error is DecodingError)
-        }
+        await #expect(throws: DecodingError.self,
+                      performing: {
+            try await sut.getBeers()
+        })
     }
 
     @Test func getBeers_emptyData_throwsDecodingError() async {
         let emptyData = Data()
         mockURLSession.stubDataResponse = .success((emptyData, URLResponse()))
-        do {
-            _ = try await sut.getBeers()
-            try #require(Bool(false))
-            
-        } catch {
-            #expect(error is DecodingError)
-        }
+        await #expect(throws: DecodingError.self,
+                      performing: {
+            try await sut.getBeers()
+        })
     }
 }
