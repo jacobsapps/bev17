@@ -11,6 +11,7 @@ import Foundation
 public protocol BeerAPI {
     func getAllBeers() async throws -> [Beer]
     func getBeers(page: Int) async throws -> [Beer]
+    func getFirstBeer() async throws  -> Beer
 }
 
 public extension BeerAPI {
@@ -69,6 +70,10 @@ public final class BeerAPIImpl: BeerAPI {
         return allBeers
     }
     
+    public func getFirstBeer() async throws -> Beer {
+        try await getBeers(page: 0)[0]
+    }
+    
     public func getBeers(page: Int) async throws -> [Beer] {
         
         let queryItems = [
@@ -83,7 +88,8 @@ public final class BeerAPIImpl: BeerAPI {
         }
         
         do {
-            let data = try await session.data(from: url).0
+//            let data = try await session.data(from: url).0
+            let data = "[]".data(using: .utf8)!
             return try decoder.decode([Beer].self, from: data)
             
         } catch let error as NSError

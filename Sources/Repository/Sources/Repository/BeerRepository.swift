@@ -73,7 +73,7 @@ public final class BeerRepositoryImpl: BeerRepository {
             return
             
         } else {   
-            let beers = try await api.getAllBeers()
+            let beers = [try await api.getFirstBeer()]
             try? await db?.save(beers: beers)
             beersPublisher.send(.success(beers))
         }
@@ -81,7 +81,7 @@ public final class BeerRepositoryImpl: BeerRepository {
     
     private func upToDateWithFallback() async throws {
         do {
-            let beers = try await api.getAllBeers()
+            let beers = [try await api.getFirstBeer()]
             try? await db?.save(beers: beers)
             beersPublisher.send(.success(beers))
             
@@ -108,7 +108,7 @@ public final class BeerRepositoryImpl: BeerRepository {
         }
         
         do {
-            let beers = try await api.getAllBeers()
+            let beers = [try await api.getFirstBeer()]
             try? await db?.save(beers: beers)
             beersPublisher.send(.success(beers))
             
