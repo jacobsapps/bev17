@@ -4,5 +4,7 @@
 <dict>
 	<key>UIApplicationSceneManifest</key>
 	<false/>
+	<key>API_KEY</key>
+	<string>12345678-90ab-cdef-1234-567890abcdef</string>
 </dict>
 </plist>
